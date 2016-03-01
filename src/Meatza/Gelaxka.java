@@ -8,7 +8,7 @@ public abstract class Gelaxka {
 		// TODO
 	}
 
-	public void gelaxkaIreki() {}
+	public abstract void gelaxkaIreki();
 
 	public boolean markatuta() {
 		return markatuta;
