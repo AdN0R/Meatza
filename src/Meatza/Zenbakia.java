@@ -11,22 +11,13 @@ public class Zenbakia extends Gelaxka {
 	}
 
 	public void gelaxkaIreki() {
-		if (!markatuta()&&!begiratuta()){
-			begiratu();
+		if (!markatuta()&&!begiratuta){
+			begiratuta = true;
 			Jokoa.getJokoa().gelaxkaBatKendu();
 		}
-	}
-
-	private boolean begiratuta() {
-		return begiratuta;
 	}
 
 	public void zenbakiaGehitu() {
 		balioa = balioa + 1;
 	}
-
-	private void begiratu() {
-		begiratuta = true;
-	}
-
 }

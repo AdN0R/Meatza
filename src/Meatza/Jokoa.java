@@ -50,7 +50,9 @@ public class Jokoa {
 		if (zenbatGelditu==0){
 			return true;
 		}
-		else return false;
+		else {
+			return false;
+		}
 	}
 
 	public void minaIkutu() {

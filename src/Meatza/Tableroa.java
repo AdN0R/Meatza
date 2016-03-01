@@ -19,8 +19,12 @@ public class Tableroa {
 	}
 	
 	private boolean tableroBarruan(int i, int j){
-		// TODO
-		return true;
+		if (((i>=0)&&(i<gelaxkak.length))&&((j>=0)&&(j<gelaxkak[0].length))){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 }
