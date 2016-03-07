@@ -8,17 +8,15 @@ public class TableroBuilder {
 		// TODO
 	}
 
-	private void minakJarri() {
-		// TODO
+	public void tableroaSortu() {
+		tableroa = new Tableroa();
+		tableroa.minakJarri();
+		tableroa.zeroakJarri();
+		
 	}
-
-	private void zeroakJarri() {
-		// TODO
-	}
-
-	public Tableroa tableroaSortu() {
-		// TODO
-		return new Tableroa();
+	
+	public Tableroa getTablero(){
+		return tableroa;
 	}
 
 }

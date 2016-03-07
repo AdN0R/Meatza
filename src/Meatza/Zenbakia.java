@@ -5,8 +5,8 @@ public class Zenbakia extends Gelaxka {
 	private int balioa;
 	private boolean begiratuta;
 
-	public Zenbakia(int pBalioa) {
-		balioa = pBalioa;
+	public Zenbakia() {
+		balioa = 1;
 		begiratuta = false;
 	}
 

@@ -3,13 +3,15 @@ package Meatza;
 public class Jokoa {
 	
 	private static Jokoa nJokoa;
+	private TableroBuilder tableroBuilder;
 	private Tableroa tableroa;
 	private int minaKop;
 	private int zenbatGelditu;
 	private boolean minaIkutu;
 	
 	private Jokoa(){
-		
+		tableroBuilder = new TableroBuilder();
+		minaIkutu = false;
 	}
 	
 	public static Jokoa getJokoa(){
@@ -20,7 +22,7 @@ public class Jokoa {
 	}
 	
 	public void setBuilder (TableroBuilder tB){
-		//TODO
+		tableroBuilder = tB;
 	}
 	
 	public Tableroa getTableroa(){
@@ -28,7 +30,7 @@ public class Jokoa {
 	}
 	
 	private void tableroaSortu() {
-		// TODO
+		tableroBuilder.tableroaSortu();
 	}
 
 	public void inguruaIreki(int i, int j) {
