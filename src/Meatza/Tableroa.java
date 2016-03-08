@@ -1,27 +1,37 @@
 package Meatza;
 
-public class Tableroa {
+import java.util.Observable;
+
+public class Tableroa extends Observable {
 	
 	private Gelaxka[][] gelaxkak;
+	private int minaKop;
 
 	public Tableroa() {
 		this.gelaxkak = new Gelaxka[10][10];
+		this.minaKop = gelaxkak[0].length;
 	}
 	
+	public int getTamaina(){
+		return gelaxkak.length * gelaxkak[0].length;
+	}
 	public void minakJarri() {
 		int m = 0;
 		int i;
 		int j;
-		int minakop= gelaxkak[0].length;
-		while (minakop != m){
+		while (minaKop != m){
 			i = (int)((double)this.gelaxkak.length*Math.random());
 			j = (int)((double)this.gelaxkak[0].length*Math.random());
-			if (tableroBarruan(i, j) && !(gelaxkak[i] [j] instanceof Mina)){
+			if (!(gelaxkak[i] [j] instanceof Mina)){
 				gelaxkak[i][j]=new Mina();
 				ingurukoeiBatGehitu(i, j);
 				m = m+1;
 			}
 		}
+	}
+	
+	public int getMinaKop(){
+		return minaKop;
 	}
 	
 	private void ingurukoeiBatGehitu(int i, int j){
@@ -60,13 +70,21 @@ public class Tableroa {
 	}
 	
 	public void inguruaIreki(int i, int j) {
-		if (tableroBarruan(i,j)){
-			gelaxkaIreki(i, j);
-		}
+		gelaxkaIreki(i-1, j-1);
+		gelaxkaIreki(i-1, j);
+		gelaxkaIreki(i-1, j+1);
+		gelaxkaIreki(i, j-1);
+		gelaxkaIreki(i, j+1);
+		gelaxkaIreki(i+1, j-1);
+		gelaxkaIreki(i+1, j);
+		gelaxkaIreki(i+1, j+1);
+		
 	}
 
 	public void gelaxkaIreki(int i, int j) {
-		// TODO
+		if (tableroBarruan(i,j)){
+			gelaxkak[i][j].gelaxkaIreki();
+		}
 	}
 	
 	private boolean tableroBarruan(int i, int j){

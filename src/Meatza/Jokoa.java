@@ -10,6 +10,7 @@ public class Jokoa {
 	private boolean minaIkutu;
 	
 	private Jokoa(){
+		super();
 		tableroBuilder = new TableroBuilder();
 		minaIkutu = false;
 	}
@@ -31,17 +32,13 @@ public class Jokoa {
 	
 	private void tableroaSortu() {
 		tableroBuilder.tableroaSortu();
+		tableroa = tableroBuilder.getTablero();
+		minaKop = tableroa.getMinaKop();
+		zenbatGelditu = tableroa.getTamaina() - minaKop;
 	}
 
 	public void inguruaIreki(int i, int j) {
-		tableroa.inguruaIreki(i-1, j-1);
-		tableroa.inguruaIreki(i-1, j);
-		tableroa.inguruaIreki(i-1, j+1);
-		tableroa.inguruaIreki(i, j-1);
-		tableroa.inguruaIreki(i, j+1);
-		tableroa.inguruaIreki(i+1, j-1);
-		tableroa.inguruaIreki(i+1, j);
-		tableroa.inguruaIreki(i+1, j+1);
+		tableroa.inguruaIreki(i,j);
 	}
 
 	public void gelaxkaBatKendu() {
@@ -58,7 +55,7 @@ public class Jokoa {
 	}
 
 	public void minaIkutu() {
-		// TODO
+		minaIkutu = true;
 	}
 
 }

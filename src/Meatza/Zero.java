@@ -13,21 +13,12 @@ public class Zero extends Gelaxka {
 	}
 
 	public void gelaxkaIreki() {
-		if (!markatuta()&&!begiratuta()){
-			begiratu();
+		if (!markatuta()&&!begiratuta){
+			begiratuta = true;
 			Jokoa.getJokoa().gelaxkaBatKendu();
 			if (!Jokoa.getJokoa().irabazi()){
 				Jokoa.getJokoa().inguruaIreki(i, j);
 			}
 		}
 	}
-
-	private boolean begiratuta() {
-		return begiratuta;
-	}
-
-	private void begiratu() {
-		begiratuta = true;
-	}
-
 }
