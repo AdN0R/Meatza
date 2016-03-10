@@ -18,6 +18,7 @@ public class Zero extends Gelaxka {
 			}
 			else {
 				System.out.println("Zorionak, irabazi duzu!!"); // x segundutan
+				Leihoa.getLeihoa().amaitu();
 			}
 		}
 	}

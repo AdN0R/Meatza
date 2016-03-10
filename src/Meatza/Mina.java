@@ -6,10 +6,10 @@ public class Mina extends Gelaxka {
 
 	public void gelaxkaIreki(int i, int j) {
 		if (!markatuta()){
-			Jokoa.getJokoa().minaIkutu();
 			Leihoa.getLeihoa().eguneratu(i,j,this.motaItzuli());
 			Jokoa.getJokoa().minakIreki();
 			System.out.println("Galdu duzu"); // x segundu
+			Leihoa.getLeihoa().amaitu();
 		}
 	}
 

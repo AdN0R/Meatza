@@ -17,6 +17,7 @@ public class Zenbakia extends Gelaxka {
 			Leihoa.getLeihoa().eguneratu(i,j,this.motaItzuli());
 			if (Jokoa.getJokoa().irabazi()){
 				System.out.println("Zorionak, irabazi duzu!!"); // x segundutan
+				Leihoa.getLeihoa().amaitu();
 			}
 		}
 	}
