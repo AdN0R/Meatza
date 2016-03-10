@@ -1,7 +1,5 @@
 package Grafikoa;
 
-import Meatza.Jokoa;
-
 //import java.math.*;
 
 import java.awt.event.MouseEvent;

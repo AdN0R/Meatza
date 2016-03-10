@@ -1,5 +1,7 @@
 package Meatza;
 
+import Grafikoa.Leihoa;
+
 public class Mina extends Gelaxka {
 	
 	public Mina() {}

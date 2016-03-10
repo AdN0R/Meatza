@@ -1,6 +1,6 @@
 package Meatza;
 
-import java.util.Observable;
+import Grafikoa.Leihoa;
 
 public class Tableroa {
 	
@@ -105,7 +105,7 @@ public class Tableroa {
 		while (tableroBarruan(i,j)){
 			while (tableroBarruan(i,j)){
 				if (motaItzuli(i,j)==-1){
-					Leihoa.getLeihoa.eguneratu(i,j,-1);
+					Leihoa.getLeihoa().eguneratu(i,j,-1);
 				}
 				j++;
 			}

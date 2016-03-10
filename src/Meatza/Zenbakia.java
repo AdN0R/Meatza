@@ -1,5 +1,7 @@
 package Meatza;
 
+import Grafikoa.Leihoa;
+
 public class Zenbakia extends Gelaxka {
 	
 	private int balioa;

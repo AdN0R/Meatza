@@ -9,7 +9,6 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Component;
 import javax.swing.Box;
 import java.awt.GridLayout;
-import javax.swing.ImageIcon;
 
 public class Leihoa extends JFrame {
 	

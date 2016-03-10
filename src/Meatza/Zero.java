@@ -1,5 +1,7 @@
 package Meatza;
 
+import Grafikoa.Leihoa;
+
 public class Zero extends Gelaxka {
 	
 	private boolean begiratuta;
