@@ -58,8 +58,11 @@ public class Lauki extends JButton implements MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		Jokoa j = Jokoa.getJokoa();
-		j.gelaxkaIreki(this.i,this.j);
+		if(!Leihoa.getLeihoa().amaituta()){
+			Jokoa j = Jokoa.getJokoa();
+			j.gelaxkaIreki(this.i,this.j);
+		}
+	
 	}
 
 	@Override

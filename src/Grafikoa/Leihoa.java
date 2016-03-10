@@ -15,6 +15,7 @@ public class Leihoa extends JFrame {
 	private static Leihoa nireLeihoa;
 	private JPanel contentPane;
 	private Lauki[][] matrix;
+	private boolean amaituta;
 
 	/**
 	 * Launch the application.
@@ -81,7 +82,12 @@ public class Leihoa extends JFrame {
 		contentPane.add(pEskuma, BorderLayout.EAST);
 	}
 	
-	public void amaitu(){}
+	public void amaitu(){
+		this.amaituta=true;
+	}
+	public boolean amaituta(){
+		return amaituta;
+	}
 	
 	public void eguneratu(int pI,int pJ,int pM){
 		Leihoa l = Leihoa.getLeihoa();
