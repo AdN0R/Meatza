@@ -57,7 +57,7 @@ public class Leihoa extends JFrame {
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(new GridLayout(pI, pJ, 0, 0));
-		
+
 		Lauki pLauki=null;
 		for(int lerro=0; lerro<pI; lerro++){
 			for(int zutabe=0; zutabe<pJ; zutabe++){
@@ -80,8 +80,7 @@ public class Leihoa extends JFrame {
 		contentPane.add(pEskuma, BorderLayout.EAST);
 	}
 	
-	public void amaitu(){
-	}
+	public void amaitu(){}
 	
 	public void eguneratu(int pI,int pJ,int pM){
 		Leihoa l = Leihoa.getLeihoa();

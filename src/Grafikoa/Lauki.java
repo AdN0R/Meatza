@@ -8,6 +8,10 @@ import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import Meatza.Jokoa;
+
+import javax.swing.*;
+
 public class Lauki extends JButton implements MouseListener{
 	
 	private int i,j;
@@ -15,6 +19,7 @@ public class Lauki extends JButton implements MouseListener{
 	public Lauki(int pI, int pJ){
 		this.i=pI;
 		this.j=pJ;
+		this.addMouseListener(this);
 	}
 	
 	public void aldatuIrudia(int pM){
@@ -26,6 +31,8 @@ public class Lauki extends JButton implements MouseListener{
 		}
 		else if(pM==1){
 			this.setIcon(new ImageIcon("Irudiak/1.png"));
+			this.setBorder(BorderFactory.createEmptyBorder());
+			this.setContentAreaFilled(false);
 		}
 		else if(pM==2){
 			this.setIcon(new ImageIcon("Irudiak/2.png"));
@@ -53,43 +60,30 @@ public class Lauki extends JButton implements MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		Leihoa l = Leihoa.getLeihoa();
-		int ran = (int) (Math.random()*10)-1;
-		l.eguneratu(this.i,this.j,ran);
-		//j.gelaxkaIreki(this.i,this.j);
-		//this.aldatuIrudia(j.motaItzuli(this.i,this.j));
+		this.setBorder(BorderFactory.createEmptyBorder());
+		this.setContentAreaFilled(false);
+		Jokoa j = Jokoa.getJokoa();
+		j.gelaxkaIreki(this.i,this.j);
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		Leihoa l = Leihoa.getLeihoa();
-		int ran = (int) (Math.random()*10)-1;
-		l.eguneratu(this.i,this.j,ran);
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		Leihoa l = Leihoa.getLeihoa();
-		int ran = (int) (Math.random()*10)-1;
-		l.eguneratu(this.i,this.j,ran);
 	}
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		Leihoa l = Leihoa.getLeihoa();
-		int ran = (int) (Math.random()*10)-1;
-		l.eguneratu(this.i,this.j,ran);
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		Leihoa l = Leihoa.getLeihoa();
-		int ran = (int) (Math.random()*10)-1;
-		l.eguneratu(this.i,this.j,ran);
 	}
 }

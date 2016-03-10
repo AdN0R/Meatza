@@ -49,6 +49,10 @@ public class Jokoa {
 		}
 	}
 	
+	public void gelaxkaIreki(int i, int j){
+		this.tableroa.gelaxkaIreki(i,j);
+	}
+	
 	public int motaItzuli(int i, int j){
 		return tableroa.motaItzuli(i,j);
 	}
