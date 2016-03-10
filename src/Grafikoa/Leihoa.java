@@ -1,6 +1,5 @@
 package Grafikoa;
 
-import Meatza.*;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -10,11 +9,13 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Component;
 import javax.swing.Box;
 import java.awt.GridLayout;
-import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 public class Leihoa extends JFrame {
-
+	
+	private static Leihoa nireLeihoa;
 	private JPanel contentPane;
+	private Lauki[][] matrix;
 
 	/**
 	 * Launch the application.
@@ -23,7 +24,7 @@ public class Leihoa extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Leihoa frame = new Leihoa(10,10); //meter dos parametros
+					Leihoa frame = getLeihoa();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,9 +36,20 @@ public class Leihoa extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Leihoa(int pI, int pJ) { //dos parametros para crear el tablero
+	
+	public static Leihoa getLeihoa(){
+		if(nireLeihoa==null){
+			nireLeihoa = new Leihoa(10,10);
+		}
+		return nireLeihoa;
+	}
+	
+	private Leihoa(int pI, int pJ) {
+		
+		this.matrix=new Lauki[pI][pJ];
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 700);
+		setBounds(50, 50, 600, 685);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -47,10 +59,11 @@ public class Leihoa extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(new GridLayout(pI, pJ, 0, 0));
 		
-		Lauki pLauki;
+		Lauki pLauki=null;
 		for(int lerro=0; lerro<pI; lerro++){
 			for(int zutabe=0; zutabe<pJ; zutabe++){
-				pLauki = new Lauki(lerro,zutabe,lerro+"-"+zutabe);
+				pLauki = new Lauki(lerro,zutabe);
+				this.matrix[lerro][zutabe]=pLauki;
 				panel.add(pLauki);
 			}
 		}
@@ -66,6 +79,13 @@ public class Leihoa extends JFrame {
 		
 		Component pEskuma = Box.createHorizontalStrut(40);
 		contentPane.add(pEskuma, BorderLayout.EAST);
-		
+	}
+	
+	public void amaitu(){
+	}
+	
+	public void eguneratu(int pI,int pJ,int pM){
+		Leihoa l = Leihoa.getLeihoa();
+		l.matrix[pI][pJ].aldatuIrudia(pM);
 	}
 }
