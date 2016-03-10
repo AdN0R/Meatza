@@ -8,6 +8,8 @@ public class Mina extends Gelaxka {
 		if (!markatuta()){
 			Jokoa.getJokoa().minaIkutu();
 			Leihoa.getLeihoa().eguneratu(i,j,this.motaItzuli());
+			Jokoa.getJokoa().minakIreki();
+			System.out.println("Galdu duzu"); // x segundu
 		}
 	}
 

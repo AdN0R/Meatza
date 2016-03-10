@@ -16,6 +16,9 @@ public class Zero extends Gelaxka {
 			if (!Jokoa.getJokoa().irabazi()){
 				Jokoa.getJokoa().inguruaIreki(i, j);
 			}
+			else {
+				System.out.println("Zorionak, irabazi duzu!!"); // x segundutan
+			}
 		}
 	}
 	

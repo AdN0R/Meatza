@@ -2,7 +2,7 @@ package Meatza;
 
 import java.util.Observable;
 
-public class Tableroa extends Observable {
+public class Tableroa {
 	
 	private Gelaxka[][] gelaxkak;
 	private int minaKop;
@@ -97,5 +97,20 @@ public class Tableroa extends Observable {
 
 	public int motaItzuli(int i, int j){
 		return gelaxkak[i][j].motaItzuli();
+	}
+	
+	public void minakIreki(){
+		int i=0;
+		int j=0;
+		while (tableroBarruan(i,j)){
+			while (tableroBarruan(i,j)){
+				if (motaItzuli(i,j)==-1){
+					Leihoa.getLeihoa.eguneratu(i,j,-1);
+				}
+				j++;
+			}
+			j=0;
+			i++;
+		}
 	}
 }

@@ -1,5 +1,7 @@
 package Meatza;
 
+import Grafikoa.Leihoa;
+
 public class Jokoa {
 	
 	private static Jokoa nJokoa;
@@ -7,12 +9,9 @@ public class Jokoa {
 	private Tableroa tableroa;
 	private int minaKop;
 	private int zenbatGelditu;
-	private boolean minaIkutu;
 	
 	private Jokoa(){
-		super();
 		tableroBuilder = new TableroBuilder();
-		minaIkutu = false;
 	}
 	
 	public static Jokoa getJokoa(){
@@ -20,10 +19,6 @@ public class Jokoa {
 			nJokoa = new Jokoa();
 		}
 		return nJokoa;
-	}
-	
-	public void setBuilder (TableroBuilder tB){
-		tableroBuilder = tB;
 	}
 	
 	public Tableroa getTableroa(){
@@ -53,12 +48,17 @@ public class Jokoa {
 			return false;
 		}
 	}
-
-	public void minaIkutu() {
-		minaIkutu = true;
-	}
 	
 	public int motaItzuli(int i, int j){
 		return tableroa.motaItzuli(i,j);
+	}
+	
+	public static void main (String[] args){
+		Jokoa.getJokoa().tableroaSortu();
+		Leihoa.main(null);
+	}
+	
+	public void minakIreki(){
+		tableroa.minakIreki();
 	}
 }

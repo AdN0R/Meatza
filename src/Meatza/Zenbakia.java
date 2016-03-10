@@ -15,6 +15,9 @@ public class Zenbakia extends Gelaxka {
 			begiratuta = true;
 			Jokoa.getJokoa().gelaxkaBatKendu();
 			Leihoa.getLeihoa().eguneratu(i,j,this.motaItzuli());
+			if (Jokoa.getJokoa().irabazi()){
+				System.out.println("Zorionak, irabazi duzu!!"); // x segundutan
+			}
 		}
 	}
 	

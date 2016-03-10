@@ -10,7 +10,7 @@ import java.util.Observer;
 import javax.swing.JButton;
 
 
-public class Lauki extends JButton implements Observer, MouseListener{
+public class Lauki extends JButton implements MouseListener{
 	
 	private int i,j;
 	// irudiak
