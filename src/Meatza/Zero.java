@@ -12,7 +12,7 @@ public class Zero extends Gelaxka {
 		if (!markatuta()&&!begiratuta){
 			begiratuta = true;
 			Jokoa.getJokoa().gelaxkaBatKendu();
-			Leihoa.getLeihoa().eguneratu(i,j);
+			Leihoa.getLeihoa().eguneratu(i,j,this.motaItzuli());
 			if (!Jokoa.getJokoa().irabazi()){
 				Jokoa.getJokoa().inguruaIreki(i, j);
 			}

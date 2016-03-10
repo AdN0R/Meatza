@@ -59,7 +59,6 @@ public class Jokoa {
 	}
 	
 	public int motaItzuli(int i, int j){
-		return tableroa.motaItzuli(i, j);
+		return tableroa.motaItzuli(i,j);
 	}
-
 }

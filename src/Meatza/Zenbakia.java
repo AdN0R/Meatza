@@ -14,7 +14,7 @@ public class Zenbakia extends Gelaxka {
 		if (!markatuta()&&!begiratuta){
 			begiratuta = true;
 			Jokoa.getJokoa().gelaxkaBatKendu();
-			Leihoa.getLeihoa().eguneratu(i,j);
+			Leihoa.getLeihoa().eguneratu(i,j,this.motaItzuli());
 		}
 	}
 	
