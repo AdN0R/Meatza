@@ -1,7 +1,5 @@
 package Grafikoa;
 
-//import java.math.*;
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -9,8 +7,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import Meatza.Jokoa;
-
-import javax.swing.*;
 
 public class Lauki extends JButton implements MouseListener{
 	
@@ -58,11 +54,7 @@ public class Lauki extends JButton implements MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		if(!Leihoa.getLeihoa().amaituta()){
-			Jokoa j = Jokoa.getJokoa();
-			j.gelaxkaIreki(this.i,this.j);
-		}
-	
+		// TODO Auto-generated method stub
 	}
 
 	@Override
@@ -78,6 +70,11 @@ public class Lauki extends JButton implements MouseListener{
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
+		if(!Leihoa.getLeihoa().amaituta()){
+			Jokoa j = Jokoa.getJokoa();
+			j.gelaxkaIreki(this.i,this.j);
+		}
+	
 	}
 
 	@Override
