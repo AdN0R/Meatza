@@ -72,7 +72,7 @@ public class Lauki extends JButton implements MouseListener{
 		// TODO Auto-generated method stub
 		if(!Leihoa.getLeihoa().amaituta()){
 			Jokoa j = Jokoa.getJokoa();
-			j.gelaxkaIreki(this.i,this.j);
+			j.mouseClicked(this.i,this.j,arg0);
 		}
 	
 	}

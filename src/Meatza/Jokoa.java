@@ -1,5 +1,7 @@
 package Meatza;
 
+import java.awt.event.MouseEvent;
+
 import Grafikoa.Leihoa;
 
 public class Jokoa {
@@ -49,8 +51,10 @@ public class Jokoa {
 		}
 	}
 	
-	public void gelaxkaIreki(int i, int j){
-		this.tableroa.gelaxkaIreki(i,j);
+	public void mouseClicked(int i, int j,MouseEvent e){
+		if (e.getButton()==MouseEvent.BUTTON1){
+			this.tableroa.gelaxkaIreki(i,j);
+		}
 	}
 	
 	public int motaItzuli(int i, int j){
