@@ -10,10 +10,11 @@ public class Zenbakia extends Gelaxka {
 		begiratuta = false;
 	}
 
-	public void gelaxkaIreki() {
+	public void gelaxkaIreki(int i, int j) {
 		if (!markatuta()&&!begiratuta){
 			begiratuta = true;
 			Jokoa.getJokoa().gelaxkaBatKendu();
+			Leihoa.getLeihoa().eguneratu(i,j);
 		}
 	}
 	

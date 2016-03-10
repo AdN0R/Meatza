@@ -61,7 +61,7 @@ public class Tableroa extends Observable {
 			int j = 0;
 			while(tableroBarruan(i,j)){
 				if (tableroBarruan(i, j) && gelaxkak[i][j] == null){
-					gelaxkak[i][j]=new Zero(i, j);
+					gelaxkak[i][j]=new Zero();
 				}
 				j++;
 			}
@@ -82,7 +82,7 @@ public class Tableroa extends Observable {
 
 	public void gelaxkaIreki(int i, int j) {
 		if (tableroBarruan(i,j)){
-			gelaxkak[i][j].gelaxkaIreki();
+			gelaxkak[i][j].gelaxkaIreki(i,j);
 		}
 	}
 	

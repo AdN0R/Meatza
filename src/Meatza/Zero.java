@@ -2,20 +2,17 @@ package Meatza;
 
 public class Zero extends Gelaxka {
 	
-	private int i;
-	private int j;
 	private boolean begiratuta;
 
-	public Zero(int pI, int pJ) {
-		i = pI;
-		j = pJ;
+	public Zero() {
 		begiratuta = false;
 	}
 
-	public void gelaxkaIreki() {
+	public void gelaxkaIreki(int i, int j) {
 		if (!markatuta()&&!begiratuta){
 			begiratuta = true;
 			Jokoa.getJokoa().gelaxkaBatKendu();
+			Leihoa.getLeihoa().eguneratu(i,j);
 			if (!Jokoa.getJokoa().irabazi()){
 				Jokoa.getJokoa().inguruaIreki(i, j);
 			}

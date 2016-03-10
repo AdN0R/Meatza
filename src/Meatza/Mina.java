@@ -4,9 +4,10 @@ public class Mina extends Gelaxka {
 	
 	public Mina() {}
 
-	public void gelaxkaIreki() {
+	public void gelaxkaIreki(int i, int j) {
 		if (!markatuta()){
 			Jokoa.getJokoa().minaIkutu();
+			Leihoa.getLeihoa().eguneratu(i,j);
 		}
 	}
 
