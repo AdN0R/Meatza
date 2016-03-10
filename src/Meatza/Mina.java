@@ -10,4 +10,10 @@ public class Mina extends Gelaxka {
 		}
 	}
 
+	public int motaItzuli(){
+		if (!markatuta()){
+			return -1;
+		}
+		else return 9;
+	}
 }

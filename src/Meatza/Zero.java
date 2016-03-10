@@ -21,4 +21,11 @@ public class Zero extends Gelaxka {
 			}
 		}
 	}
+	
+	public int motaItzuli(){
+		if (!markatuta()&&!begiratuta){
+			return 0;
+		}
+		else return 9;
+	}
 }

@@ -78,7 +78,6 @@ public class Tableroa extends Observable {
 		gelaxkaIreki(i+1, j-1);
 		gelaxkaIreki(i+1, j);
 		gelaxkaIreki(i+1, j+1);
-		
 	}
 
 	public void gelaxkaIreki(int i, int j) {
@@ -96,4 +95,7 @@ public class Tableroa extends Observable {
 		}
 	}
 
+	public int motaItzuli(int i, int j){
+		return gelaxkak[i][j].motaItzuli();
+	}
 }

@@ -57,5 +57,9 @@ public class Jokoa {
 	public void minaIkutu() {
 		minaIkutu = true;
 	}
+	
+	public int motaItzuli(int i, int j){
+		return tableroa.motaItzuli(i, j);
+	}
 
 }

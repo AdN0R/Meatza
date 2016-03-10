@@ -16,6 +16,13 @@ public class Zenbakia extends Gelaxka {
 			Jokoa.getJokoa().gelaxkaBatKendu();
 		}
 	}
+	
+	public int motaItzuli(){
+		if (!markatuta() && (!begiratuta)){
+			return balioa;
+		}
+		else return 9;
+	}
 
 	public void zenbakiaGehitu() {
 		balioa = balioa + 1;

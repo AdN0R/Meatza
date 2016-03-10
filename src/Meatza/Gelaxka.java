@@ -13,5 +13,7 @@ public abstract class Gelaxka {
 	public boolean markatuta() {
 		return markatuta;
 	}
+	
+	public abstract int motaItzuli();
 
 }
