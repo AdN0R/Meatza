@@ -59,9 +59,10 @@ public class Jokoa {
 	
 	public static void main (String[] args){
 		Jokoa.getJokoa().tableroaSortu();
-		Leihoa.main(null);
+		Leihoa l = Leihoa.getLeihoa();
+		l.hasieratu();
 	}
-	
+
 	public void minakIreki(){
 		tableroa.minakIreki();
 	}

@@ -19,13 +19,14 @@ public class Leihoa extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
+	public void hasieratu(){
+		EventQueue.invokeLater(new Runnable(){
+			public void run(){
 				try {
 					Leihoa frame = getLeihoa();
 					frame.setVisible(true);
-				} catch (Exception e) {
+				}
+				catch (Exception e){
 					e.printStackTrace();
 				}
 			}

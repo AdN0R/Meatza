@@ -31,8 +31,6 @@ public class Lauki extends JButton implements MouseListener{
 		}
 		else if(pM==1){
 			this.setIcon(new ImageIcon("Irudiak/1.png"));
-			this.setBorder(BorderFactory.createEmptyBorder());
-			this.setContentAreaFilled(false);
 		}
 		else if(pM==2){
 			this.setIcon(new ImageIcon("Irudiak/2.png"));
@@ -53,16 +51,13 @@ public class Lauki extends JButton implements MouseListener{
 			this.setIcon(new ImageIcon("Irudiak/7.png"));
 		}
 		else if(pM==8){
-			this.setIcon(new ImageIcon("Irudiak/mine.png"));
+			this.setIcon(new ImageIcon("Irudiak/8.png"));
 		}
 		else{}
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		Leihoa l = Leihoa.getLeihoa();
-		this.setBorder(BorderFactory.createEmptyBorder());
-		this.setContentAreaFilled(false);
 		Jokoa j = Jokoa.getJokoa();
 		j.gelaxkaIreki(this.i,this.j);
 	}
