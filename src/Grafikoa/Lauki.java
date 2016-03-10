@@ -53,9 +53,4 @@ public class Lauki extends JButton implements MouseListener{
 
 	}
 
-	@Override
-	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-	}
-
 }
