@@ -11,11 +11,20 @@ public class Tableroa {
 		this.gelaxkak = new Gelaxka[10][10];
 		this.minaKop = gelaxkak[0].length;
 	}
-	
+
+	public int getI(){
+		return gelaxkak.length;
+	}
+
+	public int getJ(){
+		return gelaxkak[0].length;
+	}
+
 	public int getTamaina(){
 		return gelaxkak.length * gelaxkak[0].length;
 	}
-	public void minakJarri() {
+
+	public void minakJarri(){
 		int m = 0;
 		int i;
 		int j;

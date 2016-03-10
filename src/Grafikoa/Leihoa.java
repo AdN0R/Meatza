@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Meatza.Jokoa;
+
 import java.awt.Component;
 import javax.swing.Box;
 import java.awt.GridLayout;
@@ -17,9 +20,7 @@ public class Leihoa extends JFrame {
 	private Lauki[][] matrix;
 	private boolean amaituta;
 
-	/**
-	 * Launch the application.
-	 */
+
 	public void hasieratu(){
 		EventQueue.invokeLater(new Runnable(){
 			public void run(){
@@ -34,28 +35,27 @@ public class Leihoa extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	
 	public static Leihoa getLeihoa(){
 		if(nireLeihoa==null){
-			nireLeihoa = new Leihoa(10,10);
+			nireLeihoa = new Leihoa();
 		}
 		return nireLeihoa;
 	}
-	
-	private Leihoa(int pI, int pJ) {
+
+	private Leihoa(){
+		Jokoa j = Jokoa.getJokoa();
+		int pI = j.tableroarenAltuera();
+		int pJ = j.tableroarenZabalera();
 		
 		this.matrix=new Lauki[pI][pJ];
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(50, 50, 600, 685);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		
+
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(new GridLayout(pI, pJ, 0, 0));

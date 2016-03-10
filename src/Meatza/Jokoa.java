@@ -11,7 +11,7 @@ public class Jokoa {
 	private Tableroa tableroa;
 	private int minaKop;
 	private int zenbatGelditu;
-	
+
 	private Jokoa(){
 		tableroBuilder = new TableroBuilder();
 	}
@@ -32,6 +32,14 @@ public class Jokoa {
 		tableroa = tableroBuilder.getTablero();
 		minaKop = tableroa.getMinaKop();
 		zenbatGelditu = tableroa.getTamaina() - minaKop;
+	}
+	
+	public int tableroarenAltuera(){
+		return this.tableroa.getI();
+	}
+	
+	public int tableroarenZabalera(){
+		return this.tableroa.getJ();
 	}
 
 	public void inguruaIreki(int i, int j) {
