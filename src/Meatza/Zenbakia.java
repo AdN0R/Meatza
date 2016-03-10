@@ -25,7 +25,7 @@ public class Zenbakia extends Gelaxka {
 	}
 	
 	public int motaItzuli(){
-		if (!markatuta() && (!begiratuta)){
+		if (!markatuta()){
 			return balioa;
 		}
 		else return 9;

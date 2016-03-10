@@ -26,7 +26,7 @@ public class Zero extends Gelaxka {
 	}
 	
 	public int motaItzuli(){
-		if (!markatuta()&&!begiratuta){
+		if (!markatuta()){
 			return 0;
 		}
 		else return 9;
