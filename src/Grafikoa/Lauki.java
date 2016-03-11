@@ -49,6 +49,12 @@ public class Lauki extends JButton implements MouseListener{
 		else if(pM==8){
 			this.setIcon(new ImageIcon("Irudiak/8.png"));
 		}
+		else if(pM==9){
+			this.setIcon(new ImageIcon("Irudiak/flag.png"));
+		}
+		else if(pM==10){
+			this.setIcon(null);
+		}
 		else{}
 	}
 
@@ -72,9 +78,8 @@ public class Lauki extends JButton implements MouseListener{
 		// TODO Auto-generated method stub
 		if(!Leihoa.getLeihoa().amaituta()){
 			Jokoa j = Jokoa.getJokoa();
-			j.mouseClicked(this.i,this.j,arg0);
+			j.klikatu(this.i,this.j,arg0);
 		}
-	
 	}
 
 	@Override

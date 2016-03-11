@@ -91,10 +91,20 @@ public class Tableroa {
 
 	public void gelaxkaIreki(int i, int j) {
 		if (tableroBarruan(i,j)){
-			gelaxkak[i][j].gelaxkaIreki(i,j);
+			gelaxkak[i][j].gelaxkaKlikatu(i,j);
 		}
 	}
-	
+
+	public void gelaxkaMarkatu(int i, int j) {
+		if (tableroBarruan(i,j)){
+			gelaxkak[i][j].gelaxkaMarkatu(i,j);
+		}
+	}
+
+	public boolean markatuta(int pI, int pJ){
+		return this.gelaxkak[pI][pJ].markatuta();
+	}
+
 	private boolean tableroBarruan(int i, int j){
 		if (((i>=0)&&(i<gelaxkak.length))&&((j>=0)&&(j<gelaxkak[0].length))){
 			return true;

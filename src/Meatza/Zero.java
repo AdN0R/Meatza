@@ -6,11 +6,12 @@ public class Zero extends Gelaxka {
 	
 	private boolean begiratuta;
 
-	public Zero() {
+	public Zero(){
+		super();
 		begiratuta = false;
 	}
 
-	public void gelaxkaIreki(int i, int j) {
+	public void gelaxkaKlikatu(int i, int j) {
 		if (!markatuta()&&!begiratuta){
 			begiratuta = true;
 			Jokoa.getJokoa().gelaxkaBatKendu();
@@ -24,11 +25,27 @@ public class Zero extends Gelaxka {
 			}
 		}
 	}
-	
+
+	public void gelaxkaMarkatu(int i, int j){
+		if(this.begiratuta){}
+		else{
+			if(this.markatuta()){
+				Jokoa.getJokoa().minaKopGutxitu();
+				Leihoa.getLeihoa().eguneratu(i,j,10);
+				this.markatu();
+			}
+			else{
+				Jokoa.getJokoa().minaKopGutxitu();
+				Leihoa.getLeihoa().eguneratu(i,j,9);
+				this.markatu();
+			}
+		}
+	}
+
 	public int motaItzuli(){
 		if (!markatuta()){
 			return 0;
 		}
-		else return 9;
+		else return 11;
 	}
 }

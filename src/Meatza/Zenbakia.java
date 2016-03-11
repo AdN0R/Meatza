@@ -7,12 +7,13 @@ public class Zenbakia extends Gelaxka {
 	private int balioa;
 	private boolean begiratuta;
 
-	public Zenbakia() {
+	public Zenbakia(){
+		super();
 		balioa = 1;
 		begiratuta = false;
 	}
 
-	public void gelaxkaIreki(int i, int j) {
+	public void gelaxkaKlikatu(int i, int j) {
 		if (!markatuta()&&!begiratuta){
 			begiratuta = true;
 			Jokoa.getJokoa().gelaxkaBatKendu();
@@ -23,12 +24,28 @@ public class Zenbakia extends Gelaxka {
 			}
 		}
 	}
-	
+
+	public void gelaxkaMarkatu(int i, int j){
+		if(this.begiratuta){}
+		else{
+			if(this.markatuta()){
+				Jokoa.getJokoa().minaKopGutxitu();
+				Leihoa.getLeihoa().eguneratu(i,j,10);
+				this.markatu();
+			}
+			else{
+				Jokoa.getJokoa().minaKopGutxitu();
+				Leihoa.getLeihoa().eguneratu(i,j,9);
+				this.markatu();
+			}
+		}
+	}
+
 	public int motaItzuli(){
 		if (!markatuta()){
 			return balioa;
 		}
-		else return 9;
+		else return 11;
 	}
 
 	public void zenbakiaGehitu() {

@@ -50,6 +50,10 @@ public class Jokoa {
 		zenbatGelditu--;
 	}
 
+	public void minaKopGutxitu(){ // zer da minakop ?
+		this.minaKop--;
+	}
+
 	public boolean irabazi() {
 		if (zenbatGelditu==0){
 			return true;
@@ -58,13 +62,18 @@ public class Jokoa {
 			return false;
 		}
 	}
-	
-	public void mouseClicked(int i, int j,MouseEvent e){
-		if (e.getButton()==MouseEvent.BUTTON1){
-			this.tableroa.gelaxkaIreki(i,j);
+
+	public void klikatu(int i, int j,MouseEvent e){ //TODO
+		if(e.getButton()==MouseEvent.BUTTON1){
+			if(!this.tableroa.markatuta(i,j)){
+				this.tableroa.gelaxkaIreki(i,j);
+			}
+		}
+		else if(e.getButton()==MouseEvent.BUTTON3){
+			this.tableroa.gelaxkaMarkatu(i,j);
 		}
 	}
-	
+
 	public int motaItzuli(int i, int j){
 		return tableroa.motaItzuli(i,j);
 	}
