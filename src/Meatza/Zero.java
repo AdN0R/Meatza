@@ -27,17 +27,18 @@ public class Zero extends Gelaxka {
 	}
 
 	public void gelaxkaMarkatu(int i, int j){
-		if(this.begiratuta){}
-		else{
+		if(!this.begiratuta){
 			if(this.markatuta()){
-				Jokoa.getJokoa().minaKopGutxitu();
+				Jokoa.getJokoa().minaKopHanditu();
 				Leihoa.getLeihoa().eguneratu(i,j,10);
 				this.markatu();
 			}
 			else{
-				Jokoa.getJokoa().minaKopGutxitu();
-				Leihoa.getLeihoa().eguneratu(i,j,9);
-				this.markatu();
+				if(!Jokoa.getJokoa().minaKopHutsa()){
+					Jokoa.getJokoa().minaKopGutxitu();
+					Leihoa.getLeihoa().eguneratu(i,j,9);
+					this.markatu();
+				}
 			}
 		}
 	}

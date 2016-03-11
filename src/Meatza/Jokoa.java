@@ -53,6 +53,14 @@ public class Jokoa {
 	public void minaKopGutxitu(){ // zer da minakop ?
 		this.minaKop--;
 	}
+	
+	public void minaKopHanditu(){
+		this.minaKop++;
+	}
+	
+	public boolean minaKopHutsa(){
+		return minaKop==0;
+	}
 
 	public boolean irabazi() {
 		if (zenbatGelditu==0){
