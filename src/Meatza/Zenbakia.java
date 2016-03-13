@@ -52,4 +52,15 @@ public class Zenbakia extends Gelaxka {
 	public void zenbakiaGehitu() {
 		balioa = balioa + 1;
 	}
+	
+	
+	//Junit egiteko
+	public int getBalioa(){
+		return this.balioa;
+	}
+	
+	public boolean begiratuta(){
+		return begiratuta;
+	}
+	
 }

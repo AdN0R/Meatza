@@ -49,4 +49,13 @@ public class Zero extends Gelaxka {
 		}
 		else return 11;
 	}
+	
+	
+	
+	
+	//junit eiteko
+	public boolean begiratuta(){
+		return begiratuta;
+	}
+	
 }

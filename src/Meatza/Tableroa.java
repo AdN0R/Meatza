@@ -132,4 +132,40 @@ public class Tableroa {
 			i++;
 		}
 	}
+	
+	
+	
+	
+	//Junit-ak egiteko
+	public Gelaxka[][] getGelaxkak(){
+		return this.gelaxkak;
+	}
+	
+	public void inprimatu(){
+		for(int i=0; i < gelaxkak.length; i++){
+			for(int j=0; j<gelaxkak[0].length; j++){
+				if(gelaxkak[i][j]==null){
+					System.out.print("_ ");
+				}
+				else{
+					if(gelaxkak[i][j] instanceof Mina){
+						System.out.print("M ");
+					}
+					else{
+						if(gelaxkak[i][j] instanceof Zero){
+							System.out.print("0 ");
+						}
+						else{
+							if(gelaxkak[i][j] instanceof Zenbakia){
+								System.out.print(((Zenbakia)gelaxkak[i][j]).getBalioa()+" ");
+							}
+						}
+					}
+				}
+			}
+			System.out.println();
+		}
+	}
+	
+	
 }
