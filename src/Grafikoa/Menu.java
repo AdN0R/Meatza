@@ -6,30 +6,21 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JPopupMenu;
 import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.Button;
-import javax.swing.JProgressBar;
-import javax.swing.JSlider;
+
 import java.awt.Panel;
 import javax.swing.SwingConstants;
-import javax.swing.JScrollBar;
-import java.awt.TextField;
-import java.awt.TextArea;
+
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import javax.swing.Box;
-import javax.swing.JToggleButton;
 
 public class Menu extends JFrame {
 	
 	private static Menu nireMenu;
 	private JPanel contentPane;
-	private AukeraZ datua;
+	private int balio=1;
+	private JTextField textua;
 	
 	public static Menu getMenu(){
 		if(nireMenu==null){
@@ -65,58 +56,62 @@ public class Menu extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.CENTER);
-		
+		JPanel pAuk = new JPanel();
+		contentPane.add(pAuk, BorderLayout.CENTER);
 		
 		AukeraZ auk = new AukeraZ();
-		panel.add(auk);
-		this.datua=auk;
-
-		Panel panel_1 = new Panel();
-		contentPane.add(panel_1, BorderLayout.WEST);
+		pAuk.add(auk);
 		
-		Panel panel_2 = new Panel();
-		contentPane.add(panel_2, BorderLayout.SOUTH);
+		Panel pBot = new Panel();
+		contentPane.add(pBot, BorderLayout.SOUTH);
 		
-		AdosZ botoia = new AdosZ("Ados");
-		panel_2.add(botoia);
+		Ados botoia = new Ados();
+		pBot.add(botoia);
 		
-		Component verticalStrut_1 = Box.createVerticalStrut(30);
-		panel_2.add(verticalStrut_1);
+		Component zBot = Box.createVerticalStrut(40);
+		pBot.add(zBot);
 		
-		Panel panel_3 = new Panel();
-		contentPane.add(panel_3, BorderLayout.EAST);
+		Panel pTex = new Panel();
+		contentPane.add(pTex, BorderLayout.NORTH);
+		pTex.setLayout(new BorderLayout(0, 0));
 		
-		Panel panel_4 = new Panel();
-		contentPane.add(panel_4, BorderLayout.NORTH);
+		Panel pGoi = new Panel();
+		pTex.add(pGoi, BorderLayout.NORTH);
 		
-		JLabel lblZaitlasuna = new JLabel("- ZAILTASUNA -");
-		panel_4.add(lblZaitlasuna);
+		JLabel mTex = new JLabel("- IDENTIFIKAZIOA -");
+		pGoi.add(mTex);
+		mTex.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		Component verticalStrut = Box.createVerticalStrut(40);
-		panel_4.add(verticalStrut);
+		Component zTex = Box.createVerticalStrut(40);
+		pGoi.add(zTex);
+		
+		Panel pBeh = new Panel();
+		pTex.add(pBeh, BorderLayout.SOUTH);
+		
+		JLabel mAuk = new JLabel("- ZAILTASUNA -");
+		pBeh.add(mAuk);
+		mAuk.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		Component zAuk = Box.createVerticalStrut(40);
+		pBeh.add(zAuk);
+		
+		Panel pErd = new Panel();
+		pTex.add(pErd, BorderLayout.CENTER);
+		
+		textua = new JTextField();
+		pErd.add(textua);
+		textua.setColumns(10);
+	}
+	
+	public String textuaItzuli(){
+		return this.textua.getText();
+	}
+	
+	public void balioaAldatu(int pBal){
+		this.balio=pBal;
 	}
 	
 	public int egoera(){
-		return this.datua.egoera();
-	}
-	
-	private static void addPopup(Component component, final JPopupMenu popup) {
-		component.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			public void mouseReleased(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			private void showMenu(MouseEvent e) {
-				popup.show(e.getComponent(), e.getX(), e.getY());
-			}
-		});
+		return this.balio;
 	}
 }

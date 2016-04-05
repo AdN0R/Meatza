@@ -3,15 +3,14 @@ package Grafikoa;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import Meatza.Jokoa;
 
-public class AdosZ extends JButton implements MouseListener{
+public class Ados extends JButton implements MouseListener{
 	
-	public AdosZ(String pTextua){
-		this.setText(pTextua);
+	public Ados(){
+		this.setText("ADOS");
 		this.addMouseListener(this);
 	}
 
@@ -33,10 +32,11 @@ public class AdosZ extends JButton implements MouseListener{
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		System.out.println(Menu.getMenu().egoera());
-		//Jokoa.getJokoa().sortuTableroa(Menu.getMenu().egoera());
+		Menu m = Menu.getMenu();
+		System.out.println("Identifikazioa: "+m.textuaItzuli()+"\nZailtasuna: "+m.egoera()+"\n\n");
+		//Jokoa.getJokoa().hasi(m.egoera()); Deskomentatu metodoa dagoenean
 	}
-	
+
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
