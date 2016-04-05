@@ -7,7 +7,13 @@ public class Tableroa {
 	private Gelaxka[][] gelaxkak;
 	private int minaKop;
 
-	public Tableroa() {
+	public Tableroa(int i, int j, int z) {
+		this.gelaxkak = new Gelaxka[j][i]; //j errenkada, i zutabe
+		this.minaKop = gelaxkak[0].length*z;
+	}
+	
+	//1.Sprintaren JUnit-ak funtzionatzen duela ikusteko:
+	public Tableroa(){
 		this.gelaxkak = new Gelaxka[10][10];
 		this.minaKop = gelaxkak[0].length;
 	}
@@ -141,6 +147,14 @@ public class Tableroa {
 		return this.gelaxkak;
 	}
 	
+	public void minaJarri(int i, int j){
+		if (!(gelaxkak[i] [j] instanceof Mina)){
+			gelaxkak[i][j]=new Mina();
+			ingurukoeiBatGehitu(i, j);
+		}
+	}
+	
+	
 	public void inprimatu(){
 		for(int i=0; i < gelaxkak.length; i++){
 			for(int j=0; j<gelaxkak[0].length; j++){
@@ -165,6 +179,7 @@ public class Tableroa {
 			}
 			System.out.println();
 		}
+		System.out.println();
 	}
 	
 	

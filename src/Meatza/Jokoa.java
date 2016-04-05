@@ -11,6 +11,7 @@ public class Jokoa {
 	private Tableroa tableroa;
 	private int minaKop;
 	private int zenbatGelditu;
+	private int zailtasuna;
 
 	private Jokoa(){
 		tableroBuilder = new TableroBuilder();
@@ -27,8 +28,8 @@ public class Jokoa {
 		return tableroa;
 	}
 	
-	private void tableroaSortu() {
-		tableroBuilder.tableroaSortu();
+	private void tableroaSortu(int z) {
+		tableroBuilder.tableroaSortu(z);
 		tableroa = tableroBuilder.getTablero();
 		minaKop = tableroa.getMinaKop();
 		zenbatGelditu = tableroa.getTamaina() - minaKop;
@@ -87,6 +88,7 @@ public class Jokoa {
 	}
 	
 	public static void main (String[] args){
+		//eztaitz nun guzuen sartu zailtasuna, edo zelan gutzazuen deitzu
 		Jokoa.getJokoa().tableroaSortu();
 		Leihoa l = Leihoa.getLeihoa();
 		l.hasieratu();
