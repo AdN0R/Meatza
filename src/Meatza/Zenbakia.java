@@ -17,11 +17,7 @@ public class Zenbakia extends Gelaxka {
 		if (!markatuta()&&!begiratuta){
 			begiratuta = true;
 			Jokoa.getJokoa().gelaxkaBatKendu();
-			Leihoa.getLeihoa().eguneratu(i,j,this.motaItzuli());
-			if (Jokoa.getJokoa().irabazi()){
-				System.out.println("Zorionak, irabazi duzu!!"); // x segundutan
-				Leihoa.getLeihoa().amaitu();
-			}
+			Jokoa.getJokoa().aldatuDa(i, j);
 		}
 	}
 
@@ -29,24 +25,30 @@ public class Zenbakia extends Gelaxka {
 		if(!this.begiratuta){
 			if(this.markatuta()){
 				Jokoa.getJokoa().minaKopHanditu();
-				Leihoa.getLeihoa().eguneratu(i,j,10);
 				this.markatu();
 			}
 			else{
 				if(!Jokoa.getJokoa().minaKopHutsa()){
 					Jokoa.getJokoa().minaKopGutxitu();
-					Leihoa.getLeihoa().eguneratu(i,j,9);
 					this.markatu();
 				}
 			}
 		}
+		Jokoa.getJokoa().aldatuDa(i, j);
 	}
 
 	public int motaItzuli(){
-		if (!markatuta()){
-			return balioa;
+		if (begiratuta){	
+			return balioa;			
 		}
-		else return 11;
+		else{
+			if(!markatuta()){
+				return 10;
+			}
+			else{
+				return 9;
+			}		
+		}
 	}
 
 	public void zenbakiaGehitu() {
@@ -55,12 +57,12 @@ public class Zenbakia extends Gelaxka {
 	
 	
 	//Junit egiteko
-	public int getBalioa(){
-		return this.balioa;
-	}
-	
-	public boolean begiratuta(){
-		return begiratuta;
-	}
+//	public int getBalioa(){
+//		return this.balioa;
+//	}
+//	
+//	public boolean begiratuta(){
+//		return begiratuta;
+//	}
 	
 }

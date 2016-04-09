@@ -15,14 +15,11 @@ public class Zero extends Gelaxka {
 		if (!markatuta()&&!begiratuta){
 			begiratuta = true;
 			Jokoa.getJokoa().gelaxkaBatKendu();
-			Leihoa.getLeihoa().eguneratu(i,j,this.motaItzuli());
+			Jokoa.getJokoa().aldatuDa(i, j);
 			if (!Jokoa.getJokoa().irabazi()){
 				Jokoa.getJokoa().inguruaIreki(i, j);
 			}
-			else {
-				System.out.println("Zorionak, irabazi duzu!!"); // x segundutan
-				Leihoa.getLeihoa().amaitu();
-			}
+			
 		}
 	}
 
@@ -30,32 +27,38 @@ public class Zero extends Gelaxka {
 		if(!this.begiratuta){
 			if(this.markatuta()){
 				Jokoa.getJokoa().minaKopHanditu();
-				Leihoa.getLeihoa().eguneratu(i,j,10);
 				this.markatu();
 			}
 			else{
 				if(!Jokoa.getJokoa().minaKopHutsa()){
 					Jokoa.getJokoa().minaKopGutxitu();
-					Leihoa.getLeihoa().eguneratu(i,j,9);
 					this.markatu();
 				}
 			}
 		}
+		Jokoa.getJokoa().aldatuDa(i, j);
 	}
 
 	public int motaItzuli(){
-		if (!markatuta()){
-			return 0;
+		if (begiratuta){	
+				return 0;			
 		}
-		else return 11;
+		else{
+			if(!markatuta()){
+				return 10;
+			}
+			else{
+				return 9;
+			}		
+		}
 	}
 	
 	
 	
 	
 	//junit eiteko
-	public boolean begiratuta(){
-		return begiratuta;
-	}
+//	public boolean begiratuta(){
+//		return begiratuta;
+//	}
 	
 }

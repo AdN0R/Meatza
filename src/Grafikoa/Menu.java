@@ -94,6 +94,7 @@ public class Menu extends JFrame {
 			}
 		});
 		pBot.add(botoia);
+		getRootPane().setDefaultButton(botoia);
 		
 		Component zBot = Box.createVerticalStrut(40);
 		pBot.add(zBot);

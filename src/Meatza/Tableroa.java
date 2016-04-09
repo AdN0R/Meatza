@@ -1,6 +1,5 @@
 package Meatza;
 
-import Grafikoa.Leihoa;
 
 public class Tableroa {
 	
@@ -124,63 +123,51 @@ public class Tableroa {
 		return gelaxkak[i][j].motaItzuli();
 	}
 	
-	public void minakIreki(){
-		int i=0;
-		int j=0;
-		while (tableroBarruan(i,j)){
-			while (tableroBarruan(i,j)){
-				if (motaItzuli(i,j)==-1){
-					Leihoa.getLeihoa().eguneratu(i,j,-1);
-				}
-				j++;
-			}
-			j=0;
-			i++;
-		}
+	public int gelaxkarenMotaLortu(int i, int j) {
+		return gelaxkak[i][j].motaItzuli();
 	}
-	
 	
 	
 	
 	//Junit-ak egiteko
-	public Gelaxka[][] getGelaxkak(){
-		return this.gelaxkak;
-	}
-	
-	public void minaJarri(int i, int j){
-		if (!(gelaxkak[i] [j] instanceof Mina)){
-			gelaxkak[i][j]=new Mina();
-			ingurukoeiBatGehitu(i, j);
-		}
-	}
-	
-	
-	public void inprimatu(){
-		for(int i=0; i < gelaxkak.length; i++){
-			for(int j=0; j<gelaxkak[0].length; j++){
-				if(gelaxkak[i][j]==null){
-					System.out.print("_ ");
-				}
-				else{
-					if(gelaxkak[i][j] instanceof Mina){
-						System.out.print("M ");
-					}
-					else{
-						if(gelaxkak[i][j] instanceof Zero){
-							System.out.print("0 ");
-						}
-						else{
-							if(gelaxkak[i][j] instanceof Zenbakia){
-								System.out.print(((Zenbakia)gelaxkak[i][j]).getBalioa()+" ");
-							}
-						}
-					}
-				}
-			}
-			System.out.println();
-		}
-		System.out.println();
-	}
-	
+//	public Gelaxka[][] getGelaxkak(){
+//		return this.gelaxkak;
+//	}
+//	
+//	public void minaJarri(int i, int j){
+//		if (!(gelaxkak[i] [j] instanceof Mina)){
+//			gelaxkak[i][j]=new Mina();
+//			ingurukoeiBatGehitu(i, j);
+//		}
+//	}
+//	
+//	
+//	public void inprimatu(){
+//		for(int i=0; i < gelaxkak.length; i++){
+//			for(int j=0; j<gelaxkak[0].length; j++){
+//				if(gelaxkak[i][j]==null){
+//					System.out.print("_ ");
+//				}
+//				else{
+//					if(gelaxkak[i][j] instanceof Mina){
+//						System.out.print("M ");
+//					}
+//					else{
+//						if(gelaxkak[i][j] instanceof Zero){
+//							System.out.print("0 ");
+//						}
+//						else{
+//							if(gelaxkak[i][j] instanceof Zenbakia){
+//								System.out.print(((Zenbakia)gelaxkak[i][j]).getBalioa()+" ");
+//							}
+//						}
+//					}
+//				}
+//			}
+//			System.out.println();
+//		}
+//		System.out.println();
+//	}
+//	
 	
 }

@@ -12,8 +12,10 @@ import Meatza.Jokoa;
 import java.awt.Component;
 import javax.swing.Box;
 import java.awt.GridLayout;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Leihoa extends JFrame {
+public class Leihoa extends JFrame implements Observer{
 	
 	private static Leihoa nireLeihoa;
 	private JPanel contentPane;
@@ -43,7 +45,7 @@ public class Leihoa extends JFrame {
 	}
 
 	private Leihoa(){
-		
+		Jokoa.getJokoa().addObserver(this);
 	}
 	 public void hasiera(){
 		 new Menu();
@@ -101,7 +103,44 @@ public class Leihoa extends JFrame {
 	}
 	
 	public void eguneratu(int pI,int pJ,int pM){
-		Leihoa l = Leihoa.getLeihoa();
-		l.matrix[pI][pJ].aldatuIrudia(pM);
+		matrix[pI][pJ].aldatuIrudia(pM);
 	}
+
+	private void galdu(){
+		this.amaitu();
+		new Mezua (":(");
+		this.minakErakutsi();
+	}
+	
+	private void irabazi(){
+		this.amaitu();
+		new Mezua("ZORIONAK!!! Irabazi duzu");
+	}
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		int i=Jokoa.getJokoa().getAzkenI();
+		int j=Jokoa.getJokoa().getAzkenJ();
+		if(i>=0 && j>=0){
+			this.eguneratu(i,j, Jokoa.getJokoa().gelaxkarenMotaLortu(i, j));
+			if(Jokoa.getJokoa().galdu()){
+				this.galdu();
+			}
+			if(Jokoa.getJokoa().irabazi()){
+				this.irabazi();
+			}
+		}
+		
+	}
+	
+	private void minakErakutsi(){
+		for (int i=0; i<matrix.length; i++){
+			for (int j=0; j<matrix[0].length; j++){
+				int mota =Jokoa.getJokoa().gelaxkarenMotaLortu(i, j);
+				if (mota==-1){
+					eguneratu(i, j, mota);
+				}
+			}
+		}
+	}
+	
 }
