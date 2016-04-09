@@ -21,19 +21,19 @@ public class Leihoa extends JFrame {
 	private boolean amaituta;
 
 
-	public void hasieratu(){
-		EventQueue.invokeLater(new Runnable(){
-			public void run(){
-				try {
-					Leihoa frame = getLeihoa();
-					frame.setVisible(true);
-				}
-				catch (Exception e){
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public void hasieratu(){
+//		EventQueue.invokeLater(new Runnable(){
+//			public void run(){
+//				try {
+//					Leihoa frame = getLeihoa();
+//					frame.setVisible(true);
+//				}
+//				catch (Exception e){
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	public static Leihoa getLeihoa(){
 		if(nireLeihoa==null){
@@ -43,6 +43,15 @@ public class Leihoa extends JFrame {
 	}
 
 	private Leihoa(){
+		
+	}
+	 public void hasiera(){
+		 new Menu();
+	 }
+	
+	
+	public void jokoNagusiaSortu(){
+		
 		Jokoa j = Jokoa.getJokoa();
 		int pI = j.tableroarenAltuera();
 		int pJ = j.tableroarenZabalera();
@@ -80,6 +89,8 @@ public class Leihoa extends JFrame {
 		
 		Component pEskuma = Box.createHorizontalStrut(40);
 		contentPane.add(pEskuma, BorderLayout.EAST);
+		
+		setVisible(true);
 	}
 	
 	public void amaitu(){

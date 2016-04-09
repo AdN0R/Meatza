@@ -3,6 +3,7 @@ package Meatza;
 import java.awt.event.MouseEvent;
 
 import Grafikoa.Leihoa;
+import Grafikoa.Menu;
 
 public class Jokoa {
 	
@@ -28,7 +29,7 @@ public class Jokoa {
 		return tableroa;
 	}
 	
-	private void tableroaSortu(int z) {
+	public void tableroaSortu(int z) {
 		tableroBuilder.tableroaSortu(z);
 		tableroa = tableroBuilder.getTablero();
 		minaKop = tableroa.getMinaKop();
@@ -88,10 +89,7 @@ public class Jokoa {
 	}
 	
 	public static void main (String[] args){
-		//eztaitz nun guzuen sartu zailtasuna, edo zelan gutzazuen deitzu
-		Jokoa.getJokoa().tableroaSortu();
-		Leihoa l = Leihoa.getLeihoa();
-		l.hasieratu();
+		Leihoa.getLeihoa().hasiera();
 	}
 
 	public void minakIreki(){

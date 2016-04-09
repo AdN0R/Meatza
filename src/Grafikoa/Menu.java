@@ -2,53 +2,56 @@ package Grafikoa;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Frame;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import Meatza.Jokoa;
+
 import java.awt.Component;
 
 import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.SwingConstants;
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.Box;
+import javax.swing.JButton;
 
 public class Menu extends JFrame {
 	
-	private static Menu nireMenu;
 	private JPanel contentPane;
 	private int balio=1;
 	private JTextField textua;
+	private JSlider aukeraZ;
 	
-	public static Menu getMenu(){
-		if(nireMenu==null){
-			nireMenu=new Menu();
-		}
-		return nireMenu;
-	}
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Menu frame = new Menu();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	private Menu() {
+//	public void main() {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Menu frame = new Menu();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
+//
+//	/**
+//	 * Create the frame.
+//	 */
+	public Menu() {
+		//new Frame();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -59,13 +62,37 @@ public class Menu extends JFrame {
 		JPanel pAuk = new JPanel();
 		contentPane.add(pAuk, BorderLayout.CENTER);
 		
-		AukeraZ auk = new AukeraZ();
-		pAuk.add(auk);
+		aukeraZ= new JSlider();
+		aukeraZ.setToolTipText("");
+		aukeraZ.setValue(1);
+		aukeraZ.setPaintLabels(true);
+		aukeraZ.setPaintTicks(true);
+		aukeraZ.setMajorTickSpacing(1);
+		aukeraZ.setMaximum(3);
+		aukeraZ.setMinimum(1);
+		aukeraZ.addChangeListener(new ChangeListener() {
+			
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				balioaAldatu(aukeraZ.getValue());
+				
+			}
+		});
+		pAuk.add(aukeraZ);
 		
 		Panel pBot = new Panel();
 		contentPane.add(pBot, BorderLayout.SOUTH);
 		
-		Ados botoia = new Ados();
+		JButton botoia = new JButton("ADOS");
+		botoia.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);	
+				Jokoa.getJokoa().tableroaSortu(balio);
+				Leihoa.getLeihoa().jokoNagusiaSortu();
+			}
+		});
 		pBot.add(botoia);
 		
 		Component zBot = Box.createVerticalStrut(40);
@@ -101,6 +128,10 @@ public class Menu extends JFrame {
 		textua = new JTextField();
 		pErd.add(textua);
 		textua.setColumns(10);
+		
+		
+		setVisible(true);
+		
 	}
 	
 	public String textuaItzuli(){
