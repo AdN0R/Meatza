@@ -2,6 +2,7 @@ package Grafikoa;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.Frame;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -18,6 +19,7 @@ public class Mezua extends JDialog {
 
 
 	public Mezua(String mezu) {
+		super(new Frame(),"", true);
 		setBounds(100, 100, 450, 200);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(50, 5, 5, 5));

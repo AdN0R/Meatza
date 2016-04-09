@@ -29,4 +29,6 @@ public abstract class Gelaxka {
 	
 	public abstract int motaItzuli();
 
+	public abstract int azkenekoMotaItzuli();
+
 }

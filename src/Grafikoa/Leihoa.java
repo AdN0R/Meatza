@@ -108,8 +108,8 @@ public class Leihoa extends JFrame implements Observer{
 
 	private void galdu(){
 		this.amaitu();
-		new Mezua (":(");
 		this.minakErakutsi();
+		new Mezua (":(");		
 	}
 	
 	private void irabazi(){
@@ -135,7 +135,7 @@ public class Leihoa extends JFrame implements Observer{
 	private void minakErakutsi(){
 		for (int i=0; i<matrix.length; i++){
 			for (int j=0; j<matrix[0].length; j++){
-				int mota =Jokoa.getJokoa().gelaxkarenMotaLortu(i, j);
+				int mota =Jokoa.getJokoa().gelaxkarenAzkenMotaLortu(i, j);
 				if (mota==-1){
 					eguneratu(i, j, mota);
 				}

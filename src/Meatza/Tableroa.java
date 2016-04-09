@@ -126,6 +126,10 @@ public class Tableroa {
 	public int gelaxkarenMotaLortu(int i, int j) {
 		return gelaxkak[i][j].motaItzuli();
 	}
+
+	public int gelaxkarenAzkenMotaLortu(int i, int j) {
+		return gelaxkak[i][j].azkenekoMotaItzuli();
+	}
 	
 	
 	

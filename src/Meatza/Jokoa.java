@@ -125,4 +125,8 @@ public class Jokoa extends Observable{
 		this.setChanged();
 		notifyObservers();
 	}
+
+	public int gelaxkarenAzkenMotaLortu(int i, int j) {
+		return this.tableroa.gelaxkarenAzkenMotaLortu(i,j);
+	}
 }

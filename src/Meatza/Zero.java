@@ -52,6 +52,11 @@ public class Zero extends Gelaxka {
 			}		
 		}
 	}
+
+	@Override
+	public int azkenekoMotaItzuli() {
+		return this.motaItzuli();
+	}
 	
 	
 	

@@ -54,6 +54,11 @@ public class Zenbakia extends Gelaxka {
 	public void zenbakiaGehitu() {
 		balioa = balioa + 1;
 	}
+
+	@Override
+	public int azkenekoMotaItzuli() {
+		return this.motaItzuli();
+	}
 	
 	
 	//Junit egiteko

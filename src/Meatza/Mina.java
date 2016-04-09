@@ -41,4 +41,13 @@ public class Mina extends Gelaxka {
 		}
 		else return 9;
 	}
+	
+	public int azkenekoMotaItzuli(){
+		if (!markatuta()){
+			return -1;
+		}
+		else return 9;
+	}
+
+
 }
