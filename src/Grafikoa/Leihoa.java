@@ -2,15 +2,19 @@ package Grafikoa;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Panel;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Meatza.Jokoa;
 
 import java.awt.Component;
+
 import javax.swing.Box;
+
 import java.awt.GridLayout;
 import java.util.Observable;
 import java.util.Observer;
@@ -21,6 +25,7 @@ public class Leihoa extends JFrame implements Observer{
 	private JPanel contentPane;
 	private Lauki[][] matrix;
 	private boolean amaituta;
+	private JLabel markaKont;
 
 
 //	public void hasieratu(){
@@ -80,8 +85,19 @@ public class Leihoa extends JFrame implements Observer{
 			}
 		}
 		
-		Component pGoi = Box.createVerticalStrut(125);
-		contentPane.add(pGoi, BorderLayout.NORTH);
+		Panel pKont = new Panel();
+		contentPane.add(pKont, BorderLayout.NORTH);
+		pKont.setLayout(new BorderLayout(0, 0));
+		
+		Panel pWest = new Panel();
+		pKont.add(pWest, BorderLayout.WEST);
+		
+		markaKont = new JLabel();
+		minaKopEguneratu();
+		pWest.add(markaKont);
+		
+		Component zTex = Box.createVerticalStrut(40);
+		pWest.add(zTex);
 		
 		Component pEzkerra = Box.createHorizontalStrut(40);
 		contentPane.add(pEzkerra, BorderLayout.WEST);
@@ -122,6 +138,7 @@ public class Leihoa extends JFrame implements Observer{
 		int j=Jokoa.getJokoa().getAzkenJ();
 		if(i>=0 && j>=0){
 			this.eguneratu(i,j, Jokoa.getJokoa().gelaxkarenMotaLortu(i, j));
+			this.minaKopEguneratu();
 			if(Jokoa.getJokoa().galdu()){
 				this.galdu();
 			}
@@ -143,4 +160,8 @@ public class Leihoa extends JFrame implements Observer{
 		}
 	}
 	
+	private void minaKopEguneratu(){
+		String kop = Integer.toString(Jokoa.getJokoa().getMinaKop());
+		markaKont.setText("Geratzen diren minak: " + kop);
+	}
 }
