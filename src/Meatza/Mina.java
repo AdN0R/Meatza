@@ -48,6 +48,8 @@ public class Mina extends Gelaxka {
 		}
 		else return 9;
 	}
+	
+
 
 
 }
