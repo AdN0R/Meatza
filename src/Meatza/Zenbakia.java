@@ -62,9 +62,9 @@ public class Zenbakia extends Gelaxka {
 	
 	
 	//Junit egiteko
-//	public int getBalioa(){
-//		return this.balioa;
-//	}
+	public int getBalioa(){
+		return this.balioa;
+	}
 //	
 //	public boolean begiratuta(){
 //		return begiratuta;

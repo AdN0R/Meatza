@@ -8,6 +8,8 @@ import Meatza.TableroBuilder;
 import Meatza.Tableroa;
 
 public class TableroaSortuTest2 {
+	//Tableroan inprimatu() eta Zenbakian getBalioa()
+	//ipinita egon behar dira
 	
 	@Test
 	public void test() {
