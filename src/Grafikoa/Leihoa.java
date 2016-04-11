@@ -66,7 +66,15 @@ public class Leihoa extends JFrame implements Observer{
 		this.matrix=new Lauki[pI][pJ];
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(50, 50, 600, 685);
+		if(pI<9){
+			setBounds(50, 50, 595, 505);
+		}
+		else if(pI>11){
+			setBounds(50, 50, 1205, 725);
+		}
+		else{
+			setBounds(50, 50, 655, 685);
+		}
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
