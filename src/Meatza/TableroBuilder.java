@@ -18,7 +18,7 @@ public class TableroBuilder {
 			}
 			if(z==2){
 				j=10;
-				i=12;
+				i=15;
 			}
 			if(z==3){
 				j=12;
