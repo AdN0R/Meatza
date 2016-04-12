@@ -115,7 +115,7 @@ public class Leihoa extends JFrame implements Observer{
 		
 		Component pEskuma = Box.createHorizontalStrut(40);
 		contentPane.add(pEskuma, BorderLayout.EAST);
-		
+		this.setResizable(false);
 		setVisible(true);
 	}
 	
