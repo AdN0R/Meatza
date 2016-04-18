@@ -5,24 +5,22 @@ import Grafikoa.Leihoa;
 public class Zenbakia extends Gelaxka {
 	
 	private int balioa;
-	private boolean begiratuta;
 
 	public Zenbakia(){
 		super();
 		balioa = 1;
-		begiratuta = false;
 	}
 
 	public void gelaxkaKlikatu(int i, int j) {
-		if (!markatuta()&&!begiratuta){
-			begiratuta = true;
+		if (!markatuta()&&!begiratuta()){
+			this.setBegiratuta(true);
 			Jokoa.getJokoa().gelaxkaBatKendu();
 			Jokoa.getJokoa().aldatuDa(i, j);
 		}
 	}
 
 	public void gelaxkaMarkatu(int i, int j){
-		if(!this.begiratuta){
+		if(!this.begiratuta()){
 			if(this.markatuta()){
 				Jokoa.getJokoa().minaKopHanditu();
 				this.markatu();
@@ -38,7 +36,7 @@ public class Zenbakia extends Gelaxka {
 	}
 
 	public int motaItzuli(){
-		if (begiratuta){	
+		if (begiratuta()){	
 			return balioa;			
 		}
 		else{
