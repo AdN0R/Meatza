@@ -95,7 +95,7 @@ public class Tableroa {
 	}
 
 	public void gelaxkaIreki(int i, int j) {
-		if (tableroBarruan(i,j)){
+		if (tableroBarruan(i,j)&&!Jokoa.getJokoa().irabazi()&&!Jokoa.getJokoa().galdu()){
 			gelaxkak[i][j].gelaxkaKlikatu(i,j);
 		}
 	}
