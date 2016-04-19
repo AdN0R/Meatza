@@ -133,4 +133,9 @@ public class Jokoa extends Observable{
 	public int getMinaKop(){
 		return minaKop;
 	}
+
+	public void klikBikoitza(int i, int j) {
+		this.tableroa.klikBikoitza(i,j);
+		
+	}
 }

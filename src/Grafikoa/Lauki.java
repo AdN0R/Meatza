@@ -60,7 +60,9 @@ public class Lauki extends JButton implements MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+		if(arg0.getClickCount()==2 &&arg0.getButton()==MouseEvent.BUTTON1){
+			Jokoa.getJokoa().klikBikoitza(i,j);
+		}
 	}
 
 	@Override

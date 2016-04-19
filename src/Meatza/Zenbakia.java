@@ -59,6 +59,12 @@ public class Zenbakia extends Gelaxka {
 	}
 	
 	
+	public void klikBikoitza(int i, int j, int kont) {
+		if(kont==this.balioa){
+			Jokoa.getJokoa().inguruaIreki(i, j);
+		}
+	}	
+	
 	//Junit egiteko
 	public int getBalioa(){
 		return this.balioa;

@@ -173,5 +173,36 @@ public class Tableroa {
 		System.out.println();
 	}
 //	
+
+	public void klikBikoitza(int i, int j) {
+		if(gelaxkak[i][j] instanceof Zenbakia){
+			int kont=0;
+			if(tableroBarruan(i-1, j-1)&&gelaxkak[i-1][j-1].markatuta()){
+				kont++;
+			}
+			if(tableroBarruan(i-1, j)&&gelaxkak[i-1][j].markatuta()){
+				kont++;
+			}
+			if(tableroBarruan(i-1, j+1)&&gelaxkak[i-1][j+1].markatuta()){
+				kont++;
+			}
+			if(tableroBarruan(i, j-1)&&gelaxkak[i][j-1].markatuta()){
+				kont++;
+			}
+			if(tableroBarruan(i, j+1)&&gelaxkak[i][j+1].markatuta()){
+				kont++;
+			}
+			if(tableroBarruan(i+1, j-1)&&gelaxkak[i+1][j-1].markatuta()){
+				kont++;
+			}
+			if(tableroBarruan(i+1, j)&&gelaxkak[i+1][j].markatuta()){
+				kont++;
+			}
+			if(tableroBarruan(i+1, j+1)&&gelaxkak[i+1][j+1].markatuta()){
+				kont++;
+			}
+			((Zenbakia)this.gelaxkak[i][j]).klikBikoitza(i,j,kont);
+		}
+	}
 	
 }
