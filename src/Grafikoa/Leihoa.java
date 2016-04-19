@@ -3,6 +3,8 @@ package Grafikoa;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,6 +16,7 @@ import Meatza.Jokoa;
 import java.awt.Component;
 
 import javax.swing.Box;
+import javax.swing.JButton;
 
 import java.awt.GridLayout;
 import java.util.Observable;
@@ -59,6 +62,7 @@ public class Leihoa extends JFrame implements Observer{
 	
 	public void jokoNagusiaSortu(){
 		
+		amaituta=false;
 		Jokoa j = Jokoa.getJokoa();
 		int pI = j.tableroarenAltuera();
 		int pJ = j.tableroarenZabalera();
@@ -99,6 +103,16 @@ public class Leihoa extends JFrame implements Observer{
 		
 		Panel pWest = new Panel();
 		pKont.add(pWest, BorderLayout.WEST);
+		
+		JButton hasieratu= new JButton();
+		hasieratu.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Jokoa.getJokoa().tableroaErreseteatu();				
+			}
+		});
+		pKont.add(hasieratu, BorderLayout.CENTER);
 		
 		markaKont = new JLabel();
 		minaKopEguneratu();

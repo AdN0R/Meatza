@@ -138,4 +138,12 @@ public class Jokoa extends Observable{
 		this.tableroa.klikBikoitza(i,j);
 		
 	}
+	
+	public void tableroaErreseteatu(){
+		this.tableroaSortu(zailtasuna);
+		Leihoa.getLeihoa().jokoNagusiaSortu();
+		galdu=false;
+		
+		
+	}
 }
