@@ -29,21 +29,7 @@ public class Leihoa extends JFrame implements Observer{
 	private Lauki[][] matrix;
 	private boolean amaituta;
 	private JLabel markaKont;
-
-
-//	public void hasieratu(){
-//		EventQueue.invokeLater(new Runnable(){
-//			public void run(){
-//				try {
-//					Leihoa frame = getLeihoa();
-//					frame.setVisible(true);
-//				}
-//				catch (Exception e){
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	private JLabel kron;
 
 	public static Leihoa getLeihoa(){
 		if(nireLeihoa==null){
@@ -104,6 +90,9 @@ public class Leihoa extends JFrame implements Observer{
 		Panel pWest = new Panel();
 		pKont.add(pWest, BorderLayout.WEST);
 		
+		Panel pEast = new Panel();
+		pKont.add(pEast, BorderLayout.EAST);
+		
 		JButton hasieratu= new JButton();
 		hasieratu.addActionListener(new ActionListener() {
 			
@@ -113,11 +102,15 @@ public class Leihoa extends JFrame implements Observer{
 			}
 		});
 		pKont.add(hasieratu, BorderLayout.CENTER);
-		
+
 		markaKont = new JLabel();
 		minaKopEguneratu();
 		pWest.add(markaKont);
-		
+
+		kron = new JLabel();
+		kron.setText("Kronometroa: 0");
+		pEast.add(kron);
+
 		Component zTex = Box.createVerticalStrut(40);
 		pWest.add(zTex);
 		
@@ -186,4 +179,9 @@ public class Leihoa extends JFrame implements Observer{
 		String kop = Integer.toString(Jokoa.getJokoa().getMinaKop());
 		markaKont.setText("Geratzen diren minak: " + kop);
 	}
+
+	public void kronEguneratu(long pD){
+		kron.setText("Kronometroa: "+pD);
+	}
+
 }

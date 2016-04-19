@@ -17,6 +17,7 @@ public class Jokoa extends Observable{
 	private int azkenI;
 	private int azkenJ;
 	private boolean galdu;
+	private boolean kroHas;
 
 	private Jokoa(){
 		super();
@@ -98,11 +99,11 @@ public class Jokoa extends Observable{
 		Leihoa.getLeihoa().hasiera();
 	}
 
-	
+
 	public int getAzkenI(){
 		return this.azkenI;
 	}
-	
+
 	public int getAzkenJ(){
 		return this.azkenJ;
 	}
@@ -136,14 +137,22 @@ public class Jokoa extends Observable{
 
 	public void klikBikoitza(int i, int j) {
 		this.tableroa.klikBikoitza(i,j);
-		
 	}
 	
 	public void tableroaErreseteatu(){
 		this.tableroaSortu(zailtasuna);
 		Leihoa.getLeihoa().jokoNagusiaSortu();
 		galdu=false;
-		
-		
+		kroHas=false;
 	}
+	
+	public boolean kronHasita(){
+		return kroHas;
+	}
+	
+	public void kronHasi(){
+		kroHas=true;
+		Kronometro.getKronometro().hasieratu();
+	}
+
 }
