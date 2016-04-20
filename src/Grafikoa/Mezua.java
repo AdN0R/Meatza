@@ -48,6 +48,18 @@ public class Mezua extends JDialog {
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
+				
+				JButton rankingButton = new JButton("Irten");
+				rankingButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						Jokoa.getJokoa().rankingaGorde();
+						dispose();
+					}
+				});
+				rankingButton.setActionCommand("Irten");
+				buttonPane.add(rankingButton);
+				getRootPane().setDefaultButton(rankingButton);
+				
 			}
 		}
 		{
