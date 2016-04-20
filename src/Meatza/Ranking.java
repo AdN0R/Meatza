@@ -58,5 +58,9 @@ public class Ranking {
     		System.out.println("Errorea Ranking-a gordetzean.");
         }
     }
+    
+    public RDatua[] getZerrenda(){
+    	return this.rank;
+    }
 
 }
