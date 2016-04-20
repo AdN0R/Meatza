@@ -78,7 +78,7 @@ public class RankingLeihoa extends JDialog {
 		RDatua[] zerrenda = Ranking.getRanking().getZerrenda();
 		
 		for (int i=(zailtasuna-1)*10; i<zailtasuna*10; i++){
-			JLabel label = new JLabel((i+1)+".  "+ zerrenda[i].getIzena() +"      "+ zerrenda[i].getDenbora());
+			JLabel label = new JLabel((i+1-10*(zailtasuna-1))+".  "+ zerrenda[i].getIzena() +"      "+ zerrenda[i].getDenbora());
 			label.setFont(new Font("Arial", Font.PLAIN, 15));
 			panel_2.add(label);
 		}
