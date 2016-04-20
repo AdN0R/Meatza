@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Meatza.Jokoa;
+import Meatza.Ranking;
 
 import java.awt.Component;
 
@@ -55,7 +58,16 @@ public class Leihoa extends JFrame implements Observer{
 		
 		this.matrix=new Lauki[pI][pJ];
 
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+	    addWindowListener(new WindowAdapter() {
+	        @Override
+	        public void windowClosing(WindowEvent event) {
+	            Ranking.getRanking().gorde();
+	            dispose();
+	        }
+	    });
 		if(pI<9){
 			setBounds(50, 50, 595, 505);
 		}

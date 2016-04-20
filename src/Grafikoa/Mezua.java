@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Meatza.Jokoa;
+import Meatza.Ranking;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -52,13 +53,12 @@ public class Mezua extends JDialog {
 				JButton rankingButton = new JButton("Irten");
 				rankingButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						Jokoa.getJokoa().rankingaGorde();
+						Ranking.getRanking().gorde();
 						dispose();
 					}
 				});
 				rankingButton.setActionCommand("Irten");
 				buttonPane.add(rankingButton);
-				getRootPane().setDefaultButton(rankingButton);
 				
 			}
 		}

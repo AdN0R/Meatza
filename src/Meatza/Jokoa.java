@@ -18,7 +18,6 @@ public class Jokoa extends Observable{
 	private int azkenJ;
 	private boolean galdu;
 	private boolean kroHas;
-	private Ranking ranking;
 
 	private Jokoa(){
 		super();
@@ -156,9 +155,5 @@ public class Jokoa extends Observable{
 		Kronometro.getKronometro().hasieratu();
 	}
 	
-	public void rankingaGorde(){
-		ranking.gorde();
-		
-	}
 
 }
