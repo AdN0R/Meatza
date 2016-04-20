@@ -37,8 +37,17 @@ public class Mezua extends JDialog {
 		{
 			JPanel buttonPane = new JPanel();
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
-			buttonPane.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+			buttonPane.setLayout(new FlowLayout(FlowLayout.CENTER, 75, 5));
 			{
+				
+				JButton rankingErakutsi = new JButton("Ranking");
+				rankingErakutsi.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						new RankingLeihoa();
+					}
+				});
+				buttonPane.add(rankingErakutsi);				
+				
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
@@ -61,7 +70,7 @@ public class Mezua extends JDialog {
 				});
 				rankingButton.setActionCommand("Irten");
 				buttonPane.add(rankingButton);
-				
+							
 			}
 		}
 		{

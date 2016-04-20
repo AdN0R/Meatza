@@ -97,6 +97,12 @@ public class Jokoa extends Observable{
 	
 	public static void main (String[] args){
 		Leihoa.getLeihoa().hasiera();
+		try{
+			Ranking.getRanking().kargatu();
+		}
+		catch (Exception e){
+			System.out.println("Ranking-a ez da kargatu");
+		}
 	}
 
 
@@ -155,5 +161,8 @@ public class Jokoa extends Observable{
 		Kronometro.getKronometro().hasieratu();
 	}
 	
+	public int getZailtasuna(){
+		return this.zailtasuna;
+	}
 
 }
