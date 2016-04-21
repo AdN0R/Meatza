@@ -86,7 +86,9 @@ public class Menu extends JFrame {
 		botoia.addActionListener(new ActionListener() {
 			
 			@Override
+
 			public void actionPerformed(ActionEvent e) {
+				Jokoa.getJokoa().setIzena(textuaItzuli());
 				setVisible(false);	
 				Jokoa.getJokoa().tableroaSortu(balio);
 				Leihoa.getLeihoa().jokoNagusiaSortu();

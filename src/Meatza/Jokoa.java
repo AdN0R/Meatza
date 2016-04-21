@@ -18,6 +18,8 @@ public class Jokoa extends Observable{
 	private int azkenJ;
 	private boolean galdu;
 	private boolean kroHas;
+	private int denb;
+	private String izena;
 
 	private Jokoa(){
 		super();
@@ -163,6 +165,22 @@ public class Jokoa extends Observable{
 	
 	public int getZailtasuna(){
 		return this.zailtasuna;
+	}
+	
+	public void setDenb(int pDenb){
+		this.denb = pDenb;
+	}
+	
+	public int getDenb(){
+		return this.denb;
+	}
+	
+	public void setIzena(String pIzena){
+		this.izena = pIzena;
+	}
+	
+	public String getIzena(){
+		return this.izena;
 	}
 
 }

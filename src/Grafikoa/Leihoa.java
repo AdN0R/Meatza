@@ -1,5 +1,7 @@
 package Grafikoa;
 
+import static java.lang.Math.toIntExact;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Panel;
@@ -15,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import Meatza.Jokoa;
 import Meatza.Ranking;
+import Meatza.RDatua;
 
 import java.awt.Component;
 
@@ -64,7 +67,7 @@ public class Leihoa extends JFrame implements Observer{
 	    addWindowListener(new WindowAdapter() {
 	        @Override
 	        public void windowClosing(WindowEvent event) {
-	            Ranking.getRanking().gorde();
+	            Ranking.gorde();
 //	            dispose();
 	            System.exit(0);
 	        }
@@ -160,6 +163,7 @@ public class Leihoa extends JFrame implements Observer{
 		this.amaitu();
 		new Mezua("ZORIONAK!!! Irabazi duzu");
 	}
+	
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		int i=Jokoa.getJokoa().getAzkenI();
@@ -171,6 +175,7 @@ public class Leihoa extends JFrame implements Observer{
 				this.galdu();
 			}
 			if(Jokoa.getJokoa().irabazi()){
+				Ranking.getRanking().konprobatu(new RDatua( Jokoa.getJokoa().getIzena(), Jokoa.getJokoa().getDenb() ,Jokoa.getJokoa().getZailtasuna()));
 				this.irabazi();
 			}
 		}
@@ -195,6 +200,7 @@ public class Leihoa extends JFrame implements Observer{
 
 	public void kronEguneratu(long pD){
 		kron.setText("Kronometroa: "+pD);
+		Jokoa.getJokoa().setDenb(toIntExact(pD));
 	}
 
 }

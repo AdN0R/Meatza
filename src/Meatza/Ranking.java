@@ -36,6 +36,39 @@ public class Ranking {
         }
         fitx.close();
     }
+    
+    public void konprobatu(RDatua pDatua){
+    	int i=0;
+    	int m=0;
+    	if (pDatua.getMaila()==1){
+    		m=0;
+    	}
+    	if (pDatua.getMaila()==2){
+    		m=10;
+    	}
+    	if (pDatua.getMaila()==3){
+    		m=20;
+    	}
+    	boolean atera=false;
+    	while ((i<10+m)&&!(atera)){
+    		if (pDatua.getDenbora() < this.rank[i+m].getDenbora()){
+    			this.eguneratu(pDatua,i,m);
+    			atera = true;
+    		}
+    		i++;
+    	}
+    }
+    
+    private void eguneratu(RDatua pDatua, int i, int m){
+    	RDatua aux = pDatua;
+		while (i+m<9+m){
+			RDatua aux2 = this.rank[i+m];
+			this.rank[i+m] = aux;
+			aux = aux2;
+			i++;
+		}
+		this.rank[9+m] = aux;
+    }
 
 
     //Frogak egiteko
