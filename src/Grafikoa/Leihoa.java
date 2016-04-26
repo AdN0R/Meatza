@@ -161,6 +161,7 @@ public class Leihoa extends JFrame implements Observer{
 	
 	private void irabazi(){
 		this.amaitu();
+		Ranking.getRanking().konprobatu(new RDatua( Jokoa.getJokoa().getIzena(), Jokoa.getJokoa().getDenb() ,Jokoa.getJokoa().getZailtasuna()));
 		new Mezua("ZORIONAK!!! Irabazi duzu");
 	}
 	
@@ -175,7 +176,6 @@ public class Leihoa extends JFrame implements Observer{
 				this.galdu();
 			}
 			if(Jokoa.getJokoa().irabazi()){
-				Ranking.getRanking().konprobatu(new RDatua( Jokoa.getJokoa().getIzena(), Jokoa.getJokoa().getDenb() ,Jokoa.getJokoa().getZailtasuna()));
 				this.irabazi();
 			}
 		}

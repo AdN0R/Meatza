@@ -23,6 +23,7 @@ import javax.swing.SwingConstants;
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.Box;
 import javax.swing.JButton;
 
@@ -73,7 +74,7 @@ public class Menu extends JFrame {
 			
 			@Override
 			public void stateChanged(ChangeEvent e) {
-				balioaAldatu(aukeraZ.getValue());
+				balio=aukeraZ.getValue();
 				
 			}
 		});
@@ -88,10 +89,16 @@ public class Menu extends JFrame {
 			@Override
 
 			public void actionPerformed(ActionEvent e) {
-				Jokoa.getJokoa().setIzena(textuaItzuli());
-				setVisible(false);	
-				Jokoa.getJokoa().tableroaSortu(balio);
-				Leihoa.getLeihoa().jokoNagusiaSortu();
+				if(textua.getText().isEmpty() || textua.getText().length() > 15){
+					JOptionPane.showMessageDialog(null, "Erabiltzaile okerra, luzera 1-15 artean");
+				}
+				else{
+					Jokoa.getJokoa().setIzena(textua.getText());
+					setVisible(false);	
+					Jokoa.getJokoa().tableroaSortu(balio);
+					Leihoa.getLeihoa().jokoNagusiaSortu();
+				}
+				
 			}
 		});
 		pBot.add(botoia);
@@ -136,15 +143,6 @@ public class Menu extends JFrame {
 		
 	}
 	
-	public String textuaItzuli(){
-		return this.textua.getText();
-	}
 	
-	public void balioaAldatu(int pBal){
-		this.balio=pBal;
-	}
-	
-	public int egoera(){
-		return this.balio;
-	}
+
 }
