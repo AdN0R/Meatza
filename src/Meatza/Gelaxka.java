@@ -1,7 +1,5 @@
 package Meatza;
 
-import Grafikoa.Leihoa;
-
 public abstract class Gelaxka {
 	
 	private boolean markatuta;

@@ -4,7 +4,6 @@ import java.awt.event.MouseEvent;
 import java.util.Observable;
 
 import Grafikoa.Leihoa;
-import Grafikoa.Menu;
 
 public class Jokoa extends Observable{
 	
@@ -18,7 +17,6 @@ public class Jokoa extends Observable{
 	private int azkenJ;
 	private boolean galdu;
 	private boolean kroHas;
-	private int denb;
 	private String izena;
 
 	private Jokoa(){
@@ -37,7 +35,8 @@ public class Jokoa extends Observable{
 		return tableroa;
 	}
 	
-	public void tableroaSortu(int z) {
+	public void tableroaSortu(int z, String pI) {
+		this.izena=pI;
 		zailtasuna= z;
 		tableroBuilder.tableroaSortu(z);
 		tableroa = tableroBuilder.getTablero();
@@ -100,7 +99,7 @@ public class Jokoa extends Observable{
 	public static void main (String[] args){
 		Leihoa.getLeihoa().hasiera();
 		try{
-			Ranking.getRanking().kargatu();
+			Ranking.kargatu();
 		}
 		catch (Exception e){
 			System.out.println("Ranking-a ez da kargatu");
@@ -148,7 +147,7 @@ public class Jokoa extends Observable{
 	}
 	
 	public void tableroaErreseteatu(){
-		this.tableroaSortu(zailtasuna);
+		this.tableroaSortu(zailtasuna,this.izena);
 		Leihoa.getLeihoa().jokoNagusiaSortu();
 		galdu=false;
 		kroHas=false;
@@ -165,18 +164,6 @@ public class Jokoa extends Observable{
 	
 	public int getZailtasuna(){
 		return this.zailtasuna;
-	}
-	
-	public void setDenb(int pDenb){
-		this.denb = pDenb;
-	}
-	
-	public int getDenb(){
-		return this.denb;
-	}
-	
-	public void setIzena(String pIzena){
-		this.izena = pIzena;
 	}
 	
 	public String getIzena(){

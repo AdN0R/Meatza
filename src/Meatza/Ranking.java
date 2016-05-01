@@ -72,11 +72,11 @@ public class Ranking {
 
 
     //Frogak egiteko
-    public void inprimatu(){
+    /*public void inprimatu(){
     	for(int i=0; i<this.rank.length; i++){
     		System.out.println(i+" : "+this.rank[i].getIzena()+" - "+this.rank[i].getDenbora()+" - "+this.rank[i].getMaila());
     	}
-    }
+    }*/
 
     public static void gorde(){
     	try{

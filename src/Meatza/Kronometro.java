@@ -1,7 +1,5 @@
 package Meatza;
 
-import java.awt.EventQueue;
-
 import Grafikoa.Leihoa;
 
 public class Kronometro{
@@ -30,7 +28,7 @@ public class Kronometro{
 		mar = false;
 	}
 	
-	private static long getDenboraTartea(){
+	public static long getDenboraTartea(){
 		long tar;
 		if(mar){
 			tar = ((System.currentTimeMillis() - has) / 1000);

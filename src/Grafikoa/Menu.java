@@ -1,8 +1,6 @@
 package Grafikoa;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.Frame;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -93,9 +91,8 @@ public class Menu extends JFrame {
 					JOptionPane.showMessageDialog(null, "Erabiltzaile okerra, luzera 1-15 artean");
 				}
 				else{
-					Jokoa.getJokoa().setIzena(textua.getText());
 					setVisible(false);	
-					Jokoa.getJokoa().tableroaSortu(balio);
+					Jokoa.getJokoa().tableroaSortu(balio,textua.getText());
 					Leihoa.getLeihoa().jokoNagusiaSortu();
 				}
 				
@@ -142,7 +139,5 @@ public class Menu extends JFrame {
 		setVisible(true);
 		
 	}
-	
-	
 
 }
