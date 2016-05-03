@@ -92,7 +92,7 @@ public class Menu extends JFrame {
 				}
 				else{
 					setVisible(false);	
-					Jokoa.getJokoa().tableroaSortu(balio,textua.getText());
+					Jokoa.getJokoa().hasieratu(balio,textua.getText());
 					Leihoa.getLeihoa().jokoNagusiaSortu();
 				}
 				

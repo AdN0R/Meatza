@@ -35,8 +35,16 @@ public class Jokoa extends Observable{
 		return tableroa;
 	}
 	
-	public void tableroaSortu(int z, String pI) {
+	private void setIzena(String pI){
 		this.izena=pI;
+	}
+	
+	public void hasieratu(int z,String pI){
+		this.setIzena(pI);
+		this.tableroaSortu(z);
+	}
+	
+	private void tableroaSortu(int z) {
 		zailtasuna= z;
 		tableroBuilder.tableroaSortu(z);
 		tableroa = tableroBuilder.getTablero();
@@ -99,7 +107,7 @@ public class Jokoa extends Observable{
 	public static void main (String[] args){
 		Leihoa.getLeihoa().hasiera();
 		try{
-			Ranking.kargatu();
+			Ranking.getRanking().kargatu();
 		}
 		catch (Exception e){
 			System.out.println("Ranking-a ez da kargatu");
@@ -147,7 +155,7 @@ public class Jokoa extends Observable{
 	}
 	
 	public void tableroaErreseteatu(){
-		this.tableroaSortu(zailtasuna,this.izena);
+		this.tableroaSortu(zailtasuna);
 		Leihoa.getLeihoa().jokoNagusiaSortu();
 		galdu=false;
 		kroHas=false;

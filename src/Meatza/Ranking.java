@@ -22,7 +22,7 @@ public class Ranking {
 	}
 
 
-    public static void kargatu() throws Exception{
+    public void kargatu() throws Exception{
     	File f = new File("meatza-ranking.txt");
         FileReader fr = new FileReader(f);
         Scanner fitx = new Scanner(fr);
@@ -78,7 +78,7 @@ public class Ranking {
     	}
     }*/
 
-    public static void gorde(){
+    public void gorde(){
     	try{
     		FileWriter writer = new FileWriter("meatza-ranking.txt");
     		Ranking r = Ranking.getRanking();
@@ -86,10 +86,7 @@ public class Ranking {
     			writer.write(r.rank[i].getIzena()+" ### "+r.rank[i].getDenbora()+" ### "+r.rank[i].getMaila()+"\n");
     		}
     		writer.close();
-    		System.out.println("Ranking-a gordeta.");
-    	}catch(Exception e){
-    		System.out.println("Errorea Ranking-a gordetzean.");
-        }
+    	}catch(Exception e){}
     }
     
     public RDatua[] getZerrenda(){

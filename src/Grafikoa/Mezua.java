@@ -62,7 +62,7 @@ public class Mezua extends JDialog {
 				JButton rankingButton = new JButton("Irten");
 				rankingButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						Ranking.gorde();
+						Ranking.getRanking().gorde();
 //						Leihoa.getLeihoa().dispose();
 //						dispose();
 						System.exit(0);

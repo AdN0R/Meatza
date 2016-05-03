@@ -67,7 +67,7 @@ public class Leihoa extends JFrame implements Observer{
 	    addWindowListener(new WindowAdapter() {
 	        @Override
 	        public void windowClosing(WindowEvent event) {
-	            Ranking.gorde();
+	        	Ranking.getRanking().gorde();
 //	            dispose();
 	            System.exit(0);
 	        }
