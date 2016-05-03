@@ -3,6 +3,7 @@ package Grafikoa;
 import static java.lang.Math.toIntExact;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +13,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import Meatza.Jokoa;
@@ -20,6 +22,8 @@ import Meatza.Ranking;
 import Meatza.RDatua;
 
 import java.awt.Component;
+import java.awt.FlowLayout;
+import java.awt.Font;
 
 import javax.swing.Box;
 import javax.swing.JButton;
@@ -101,13 +105,13 @@ public class Leihoa extends JFrame implements Observer{
 		
 		Panel pKont = new Panel();
 		contentPane.add(pKont, BorderLayout.NORTH);
-		pKont.setLayout(new BorderLayout(0, 0));
+		pKont.setLayout(new FlowLayout(FlowLayout.CENTER, 150, 5));
 		
-		Panel pWest = new Panel();
-		pKont.add(pWest, BorderLayout.WEST);
-		
-		Panel pEast = new Panel();
-		pKont.add(pEast, BorderLayout.EAST);
+//		Panel pWest = new Panel();
+//		pKont.add(pWest, BorderLayout.WEST);
+//		
+//		Panel pEast = new Panel();
+//		pKont.add(pEast, BorderLayout.EAST);
 		
 		JButton hasieratu= new JButton();
 		hasieratu.addActionListener(new ActionListener() {
@@ -117,18 +121,35 @@ public class Leihoa extends JFrame implements Observer{
 				Jokoa.getJokoa().tableroaErreseteatu();				
 			}
 		});
-		pKont.add(hasieratu, BorderLayout.CENTER);
+		//pKont.add(hasieratu, BorderLayout.CENTER);
+		hasieratu.setText(String.format("\t"));
 
 		markaKont = new JLabel();
 		minaKopEguneratu();
-		pWest.add(markaKont);
+		//pWest.add(markaKont);
+		markaKont.setForeground(Color.red);
+		markaKont.setHorizontalTextPosition(SwingConstants.CENTER);
+		markaKont.setHorizontalAlignment(SwingConstants.CENTER);
+		markaKont.setBackground(null);
+		markaKont.setOpaque(true);
+		markaKont.setFont(new Font("Lucida Grande", Font.BOLD, 30));
 
 		kron = new JLabel();
-		kron.setText("Kronometroa: 0");
-		pEast.add(kron);
+		kron.setText("0");
+		//pEast.add(kron);
+		kron.setForeground(Color.red);
+		kron.setHorizontalTextPosition(SwingConstants.CENTER);
+		kron.setHorizontalAlignment(SwingConstants.CENTER);
+		kron.setBackground(null);
+		kron.setOpaque(true);
+		kron.setFont(new Font("Lucida Grande", Font.BOLD, 30));
+		
+		pKont.add(markaKont);
+		pKont.add(hasieratu);
+		pKont.add(kron);
 
-		Component zTex = Box.createVerticalStrut(40);
-		pWest.add(zTex);
+//		Component zTex = Box.createVerticalStrut(40);
+//		pWest.add(zTex);
 		
 		Component pEzkerra = Box.createHorizontalStrut(40);
 		contentPane.add(pEzkerra, BorderLayout.WEST);
@@ -195,10 +216,10 @@ public class Leihoa extends JFrame implements Observer{
 	
 	private void minaKopEguneratu(){
 		String kop = Integer.toString(Jokoa.getJokoa().getMinaKop());
-		markaKont.setText("Geratzen diren minak: " + kop);
+		markaKont.setText(kop);
 	}
 
 	public void kronEguneratu(long pD){
-		kron.setText("Kronometroa: "+pD);
+		kron.setText(Long.toString(pD));
 	}
 }
