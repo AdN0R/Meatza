@@ -18,17 +18,17 @@ public class Kronometro{
 		return myKro;
 	}
 
-	private static void hasi(){
+	private void hasi(){
 		has = System.currentTimeMillis();
 		mar = true;
 	}
 	
-	private static void gelditu(){
+	private void gelditu(){
 		gel = System.currentTimeMillis();
 		mar = false;
 	}
 	
-	public static long getDenboraTartea(){
+	public long getDenboraTartea(){
 		long tar;
 		if(mar){
 			tar = ((System.currentTimeMillis() - has) / 1000);

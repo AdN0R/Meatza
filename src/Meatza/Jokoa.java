@@ -30,11 +30,7 @@ public class Jokoa extends Observable{
 		}
 		return nJokoa;
 	}
-	
-	public Tableroa getTableroa(){
-		return tableroa;
-	}
-	
+
 	private void setIzena(String pI){
 		this.izena=pI;
 	}
@@ -91,17 +87,11 @@ public class Jokoa extends Observable{
 
 	public void klikatu(int i, int j,MouseEvent e){
 		if(e.getButton()==MouseEvent.BUTTON1){
-			if(!this.tableroa.markatuta(i,j)){
 				this.tableroa.gelaxkaIreki(i,j);
-			}
 		}
 		else if(e.getButton()==MouseEvent.BUTTON3){
 			this.tableroa.gelaxkaMarkatu(i,j);
 		}
-	}
-
-	public int motaItzuli(int i, int j){
-		return tableroa.motaItzuli(i,j);
 	}
 	
 	public static void main (String[] args){

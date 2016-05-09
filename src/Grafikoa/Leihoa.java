@@ -64,15 +64,12 @@ public class Leihoa extends JFrame implements Observer{
 		int pJ = j.tableroarenZabalera();
 		
 		this.matrix=new Lauki[pI][pJ];
-
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 	    addWindowListener(new WindowAdapter() {
 	        @Override
 	        public void windowClosing(WindowEvent event) {
 	        	Ranking.getRanking().gorde();
-//	            dispose();
 	            System.exit(0);
 	        }
 	    });
@@ -107,12 +104,6 @@ public class Leihoa extends JFrame implements Observer{
 		contentPane.add(pKont, BorderLayout.NORTH);
 		pKont.setLayout(new FlowLayout(FlowLayout.CENTER, 150, 5));
 		
-//		Panel pWest = new Panel();
-//		pKont.add(pWest, BorderLayout.WEST);
-//		
-//		Panel pEast = new Panel();
-//		pKont.add(pEast, BorderLayout.EAST);
-		
 		JButton hasieratu= new JButton();
 		hasieratu.addActionListener(new ActionListener() {
 			
@@ -121,12 +112,10 @@ public class Leihoa extends JFrame implements Observer{
 				Jokoa.getJokoa().tableroaErreseteatu();				
 			}
 		});
-		//pKont.add(hasieratu, BorderLayout.CENTER);
 		hasieratu.setText(String.format("\t"));
 
 		markaKont = new JLabel();
 		minaKopEguneratu();
-		//pWest.add(markaKont);
 		markaKont.setForeground(Color.red);
 		markaKont.setHorizontalTextPosition(SwingConstants.CENTER);
 		markaKont.setHorizontalAlignment(SwingConstants.CENTER);
@@ -136,7 +125,6 @@ public class Leihoa extends JFrame implements Observer{
 
 		kron = new JLabel();
 		kron.setText("0");
-		//pEast.add(kron);
 		kron.setForeground(Color.red);
 		kron.setHorizontalTextPosition(SwingConstants.CENTER);
 		kron.setHorizontalAlignment(SwingConstants.CENTER);
@@ -147,9 +135,6 @@ public class Leihoa extends JFrame implements Observer{
 		pKont.add(markaKont);
 		pKont.add(hasieratu);
 		pKont.add(kron);
-
-//		Component zTex = Box.createVerticalStrut(40);
-//		pWest.add(zTex);
 		
 		Component pEzkerra = Box.createHorizontalStrut(40);
 		contentPane.add(pEzkerra, BorderLayout.WEST);
@@ -182,7 +167,7 @@ public class Leihoa extends JFrame implements Observer{
 	
 	private void irabazi(){
 		this.amaitu();
-		Ranking.getRanking().konprobatu(new RDatua( Jokoa.getJokoa().getIzena(),toIntExact(Kronometro.getDenboraTartea()),Jokoa.getJokoa().getZailtasuna()));
+		Ranking.getRanking().konprobatu(new RDatua( Jokoa.getJokoa().getIzena(),toIntExact(Kronometro.getKronometro().getDenboraTartea()),Jokoa.getJokoa().getZailtasuna()));
 		new Mezua("ZORIONAK!!! Irabazi duzu");
 	}
 	

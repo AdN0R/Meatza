@@ -63,8 +63,6 @@ public class Mezua extends JDialog {
 				rankingButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						Ranking.getRanking().gorde();
-//						Leihoa.getLeihoa().dispose();
-//						dispose();
 						System.exit(0);
 					}
 				});

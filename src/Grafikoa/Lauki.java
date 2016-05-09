@@ -79,7 +79,6 @@ public class Lauki extends JButton implements MouseListener{
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		if(!Leihoa.getLeihoa().amaituta()){
 			Jokoa j = Jokoa.getJokoa();
 			j.klikatu(this.i,this.j,arg0);

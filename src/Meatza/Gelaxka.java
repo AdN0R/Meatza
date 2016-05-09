@@ -12,7 +12,7 @@ public abstract class Gelaxka {
 
 	public abstract void gelaxkaKlikatu(int i, int j);
 
-	public abstract void gelaxkaMarkatu(int i, int j); // Hobe daiteke ?
+	public abstract void gelaxkaMarkatu(int i, int j);
 
 	protected boolean markatuta(){
 		return markatuta;

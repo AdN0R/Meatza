@@ -5,7 +5,7 @@ public class TableroBuilder {
 	private Tableroa tableroa;
 
 	public TableroBuilder() {
-		// TODO
+
 	}
 
 	public void tableroaSortu(int z) {

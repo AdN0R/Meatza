@@ -33,22 +33,6 @@ public class Menu extends JFrame {
 	private JSlider aukeraZ;
 	
 
-//	public void main() {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Menu frame = new Menu();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-//
-//	/**
-//	 * Create the frame.
-//	 */
 	public Menu() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -134,8 +118,7 @@ public class Menu extends JFrame {
 		textua = new JTextField();
 		pErd.add(textua);
 		textua.setColumns(10);
-		
-		
+				
 		setVisible(true);
 		
 	}
