@@ -17,22 +17,6 @@ public class Zenbakia extends Gelaxka {
 		}
 	}
 
-	public void gelaxkaMarkatu(int i, int j){
-		if(!this.begiratuta()){
-			if(this.markatuta()){
-				Jokoa.getJokoa().minaKopHanditu();
-				this.markatu();
-			}
-			else{
-				if(!Jokoa.getJokoa().minaKopHutsa()){
-					Jokoa.getJokoa().minaKopGutxitu();
-					this.markatu();
-				}
-			}
-		}
-		Jokoa.getJokoa().aldatuDa(i, j);
-	}
-
 	public int motaItzuli(){
 		if (begiratuta()){	
 			return balioa;			

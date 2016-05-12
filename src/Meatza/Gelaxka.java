@@ -12,13 +12,27 @@ public abstract class Gelaxka {
 
 	public abstract void gelaxkaKlikatu(int i, int j);
 
-	public abstract void gelaxkaMarkatu(int i, int j);
+	public void gelaxkaMarkatu(int i, int j){
+		if(!this.begiratuta()){
+			if(this.markatuta()){
+				Jokoa.getJokoa().minaKopHanditu();
+				this.markatu();
+			}
+			else{
+				if(!Jokoa.getJokoa().minaKopHutsa()){
+					Jokoa.getJokoa().minaKopGutxitu();
+					this.markatu();
+				}
+			}
+		}
+		Jokoa.getJokoa().aldatuDa(i, j);
+	}
 
 	protected boolean markatuta(){
 		return markatuta;
 	}
 
-	protected void markatu(){
+	private void markatu(){
 		if(this.markatuta){
 			this.markatuta=false;
 		}
